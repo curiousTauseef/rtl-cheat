@@ -1,1 +1,4 @@
 *.cf
+*.ghw
+*.vcd
+tmp.*
