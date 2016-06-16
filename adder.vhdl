@@ -1,3 +1,5 @@
+-- 1 bit adder.
+
 entity adder is
   port (i0, i1, ci : in bit; s, co : out bit);
 end adder;

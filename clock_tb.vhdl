@@ -8,8 +8,16 @@ use ieee.std_logic_1164.all;
 entity clock_tb is
 end;
 
-architecture behave of clock_tb is
+architecture behav of clock_tb is
+    constant clk_period : time := 1 ns;
     signal clk: std_logic := '0';
 begin
-    clk <= not clk after 1 ns;
+    process
+    begin
+        for i in 13 downto 0 loop
+            clk <= not clk;
+            wait for clk_period / 2;
+        end loop;
+        wait;
+    end process;
 end;

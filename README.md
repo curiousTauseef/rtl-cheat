@@ -1,12 +1,27 @@
 # VHDL Cheat
 
-1. [GHDL](ghdl.md)
-1. [Wave files](wave-files.md)
+1.  [GHDL](ghdl.md)
+1.  [Wave files](wave-files.md)
+1.  [Language](language.md)
 1.  Examples
-    1. [Hello world](hello_world.vhdl)
-    1. [Clock](clock.vhdl)
-    1. [Adder](adder.vhdl)
-    1. TODO counter
+    1.  [Comments](comments_tb.vhdl)
+    1.  [Hello world](hello_world_tb.vhdl)
+    1.  [Min](min_tb.vhdl)
+    1.  [write](write_tb.vhdl)
+    1.  [assert](assert_tb.vhdl)
+    1.  [Literals](literals_tb.md)
+    1.  [Operators](operators_tb.md)
+    1.  [STANDARD package](standard_package_tb.md)
+    1.  Combinatoric
+        1.  [Adder](adder.vhdl)
+        1.  [sqrt8](sqrt8_tb.vhdl)
+        1.  TODO multiplier
+    1.  Sequential
+        1.  [Clock](clock_tb.vhdl)
+        1.  [Counter](counter.vhdl)
+1.  Helpers
+    1.  [Template](template_tb.vhdl)
+1.  [Bibliography](bibliography.md)
 
 ## Digital
 
@@ -47,6 +62,8 @@ IEEE standardized.
 - IEEE 1076-1987: first
 - IEEE 1076-2008
 
+Non-free... <http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4772740&filter=AND(p_Publication_Number:4772738)>
+
 ## Simulators
 
 - <http://electronics.stackexchange.com/questions/22596/vhdl-ide-for-a-gnu-linux-environment>
@@ -72,49 +89,16 @@ There is an official synthesizable subset of VHDL.
 - GPU
 - TODO: which signal processors are hardware accelerated and modelled in VHDL?
 
-## Language
-
-### std_logic
-
-- <http://electronics.stackexchange.com/questions/51848/when-to-use-std-logic-over-bit-in-vhdl>
-- <http://stackoverflow.com/questions/12504884/std-logic-in-vhdl>
-- <http://www.thecodingforums.com/threads/what-are-weak-unknown-weak-zero-and-weak-1.23302/>
-
-### Architecture
-
-#### stl vs behaviour
-
-<http://electronics.stackexchange.com/questions/63682/difference-between-rtl-and-behavioral-verilog>
-
-#### process
-
-`process`: says that things will be done sequentially.
-
-### wait
-
-Wait for some time. If no arguments are given, stop the simulation.
-
-`ghdl` has the `--stop-time=10ns` option to limit simulation time.
-
-### library ieee
-
-TODO optional or mandatory?
-
 ## Testbench
 
 Usually non synthesizable test driver circuit.
 
-## Bibliography
+## Behavioural vs structural modeling
 
-Introduction tutorials:
+Behavioural:
 
-- <http://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html>
+- a component is implemented as a black box using high level constructs
+- only IO matters, not how it is generated
+- the component does not need to be synthesizable
 
-Examples:
-
-- <https://github.com/silverjam/VHDL>
-
-Cool projects:
-
-- <https://github.com/hamsternz/FPGA_Webserver>
-- <https://github.com/fabioperez/space-invaders-vhdl>
+Structural: opposite.

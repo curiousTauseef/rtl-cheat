@@ -28,3 +28,7 @@ No Ubuntu package... but compilation very simple: <http://askubuntu.com/a/786463
     ghdl --help
     ghdl --run-help
     ghdl --options-help
+
+## Generate simulation executables
+
+TODO: docs say they should be generated, but I see none.

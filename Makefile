@@ -1,11 +1,16 @@
-all:
-	ghdl -a hello_world.vhdl
-	ghdl -e hello_world
-	ghdl -r hello_world
-	ghdl -a adder.vhdl
-	ghdl -a adder_tb.vhdl
-	ghdl -e adder_tb
-	ghdl -r adder_tb --vcd=adder.vcd
-	ghdl -a clock_tb.vhdl
-	ghdl -e clock_tb
-	ghdl -r clock_tb --stop-time=10ns --vcd=clock.vcd
+CC := ghdl
+CFLAGS := --std=93 --ieee=synopsys
+IN_EXT ?= _tb.vhdl
+
+test:
+	set -e; \
+	for f in *$(IN_EXT); do \
+		prefix="$${f%$(IN_EXT)}"; \
+		echo "#$${prefix}"; \
+		if [ -r "$${prefix}.vhdl" ]; then \
+			$(CC) -a $(CFLAGS) "$${prefix}.vhdl"; \
+		fi; \
+		$(CC) -a $(CFLAGS) "$$f"; \
+		$(CC) -e $(CFLAGS) "$${prefix}_tb"; \
+		$(CC) -r $(CFLAGS) "$${prefix}_tb" --assert-level=error --vcd="$${prefix}.vcd"; \
+	done
