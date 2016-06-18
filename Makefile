@@ -1,5 +1,5 @@
 CC := ghdl
-CFLAGS := --std=93 --ieee=synopsys
+CFLAGS := --std=08
 IN_EXT ?= _tb.vhdl
 
 test:

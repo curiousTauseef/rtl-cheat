@@ -1,26 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use IEEE.numeric_std.all; -- unsigned
+library std;
+use std.textio.all;
 
 entity counter_tb is
 end counter_tb;
 
 architecture behav of counter_tb is
-    constant width : natural := 2;
     constant clk_period : time := 1 ns;
-    component counter
-        port (
-            rst, clk, load : in std_logic;
-            data : in std_logic_vector(width-1 downto 0);
-            q    : out std_logic_vector(width-1 downto 0)
-        );
-    end component;
-    for counter_0: counter use entity work.counter;
-    signal rst, clk, load : std_logic := '0';
+    constant nperiods : integer := 13;
+    constant width : natural := 2;
+    signal rst, load : std_logic := '0';
+    signal clk : std_logic := '1';
     signal data : std_logic_vector(width-1 downto 0);
     signal q    : std_logic_vector(width-1 downto 0);
 begin
-    counter_0: counter port map (
+    counter_0: entity work.counter port map (
         rst => rst,
         clk => clk,
         load => load,
@@ -31,25 +26,29 @@ begin
     process
     begin
         rst <= '1';
-        wait for 0.5 ns;
+        wait for clk_period / 4;
         rst <= '0';
-        wait for 0.5 ns;
         wait;
     end process;
 
     process
     begin
-        wait until clk='1';
-        --TODO
-        --assert q = B"01";
+        wait until falling_edge(clk);
+        assert q = B"00";
+        wait until falling_edge(clk);
+        assert q = B"01";
+        wait until falling_edge(clk);
+        assert q = B"10";
+        wait until falling_edge(clk);
+        assert q = B"11";
         wait;
     end process;
 
     process
     begin
-        for i in 13 downto 0 loop
-            clk <= not clk;
+        for i in 1 to nperiods loop
             wait for clk_period / 2;
+            clk <= not clk;
         end loop;
         wait;
     end process;

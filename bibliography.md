@@ -4,11 +4,13 @@ Google hits a lot on old university course materials. Some good, some crappy. Al
 
 Introduction tutorials:
 
+- <http://esd.cs.ucr.edu/labs/tutorial/> many examples
 - <http://userweb.eng.gla.ac.uk/scott.roy/DCD3/>
 - <http://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html>
 
 Language references:
 
+,s
 - <http://vhdl.renerta.com/mobile/index.html>
 - <http://www.csee.umbc.edu/portal/help/VHDL/summary.html>. Very good.
 
@@ -22,3 +24,7 @@ Cool projects:
 
 - <https://github.com/hamsternz/FPGA_Webserver>
 - <https://github.com/fabioperez/space-invaders-vhdl>
+
+Utility libraries:
+
+- <https://github.com/VLSI-EDA/PoC>

@@ -1,5 +1,7 @@
 # Language
 
+TODO this is a huge dump, and should be split into VHDL files with assertions.
+
 ## architecture
 
 ### stl
@@ -18,15 +20,13 @@ TODO: fixed values or anything goes?
 
 `process`: says that things will be done sequentially.
 
-## wait
+TODO sensitivity list:
 
-Wait for some time.
+    process(signal0, signal1)
+    begin
+    end process;
 
-If no arguments are given, stop the current simulation thread (e.g. `process`).
-
-`ghdl` has the `--stop-time=10ns` option to limit simulation time.
-
-<http://www.ics.uci.edu/~jmoorkan/vhdlref/waits.html>
+I think it says which signals it depends on.
 
 ## library ieee
 
@@ -52,6 +52,8 @@ A wire with a given voltage.
 Somewhat like a variable in higher level languages.
 
 Those are the things that can be output to wave files for further analysis.
+
+Not update immeditaly upon assignment: <http://stackoverflow.com/questions/5060635/how-does-signal-assignment-work-in-a-process>
 
 ## Operators
 
@@ -104,8 +106,6 @@ Physical: `TIME`.
 Enumeration types:
 
     CHARACTER, BIT, BOOLEAN, SEVERITY_LEVEL, FILE_OPEN_KIND, and FILE_OPEN_STATUS
-
-Predefined array types
 
 Array types:
 
@@ -168,12 +168,28 @@ A value other than `'0'` and `'1'`, e.g. `'x'`.
 
 ### signed
 
-Declare:
+In `numeric_std`:
 
-    signal cnt : unsigned(width-1 downto 0);
+    type UNSIGNED is array (NATURAL range <>) of STD_LOGIC;
+    type SIGNED is array (NATURAL range <>) of STD_LOGIC;
 
-Convert `std_logic_vector` to it:
+In `numeric_bit`:
 
-    data : in std_logic_vector(width-1 downto 0);
-    signal cnt : unsigned(width-1 downto 0);
-    cnt <= unsigned(data);
+    type UNSIGNED is array (NATURAL range <> ) of BIT;
+    type SIGNED is array (NATURAL range <> ) of BIT;
+
+But unlike other arrays, those types have arithmetic operations defined on them, as they encode how the bits are interpreted as well: 2's complement.
+
+TODO: what happens if you include both? Incompatible?
+
+TODO: what can be converted to them?
+
+## Reserved words
+
+VHDL 2008 15.10 Reserved words.
+
+## generic
+
+<http://www.edaboard.com/thread23546.html>
+
+Like `constant`, but can be defined on the `entity`.

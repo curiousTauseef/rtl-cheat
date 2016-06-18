@@ -2,13 +2,9 @@ entity adder_tb is
 end adder_tb;
 
 architecture behav of adder_tb is
-    component adder
-        port (i0, i1, ci : in bit; s, co : out bit);
-    end component;
-    for adder_0: adder use entity work.adder;
     signal i0, i1, ci, s, co : bit;
 begin
-    adder_0: adder port map (
+    adder_0: entity work.adder port map (
         i0 => i0,
         i1 => i1,
         ci => ci,
