@@ -4,13 +4,7 @@ end adder_tb;
 architecture behav of adder_tb is
     signal i0, i1, ci, s, co : bit;
 begin
-    adder_0: entity work.adder port map (
-        i0 => i0,
-        i1 => i1,
-        ci => ci,
-        s => s,
-        co => co
-    );
+    adder_0: entity work.adder port map (i0, i1, ci, s, co);
     process
         type pattern_type is record
             i0, i1, ci, s, co : bit;

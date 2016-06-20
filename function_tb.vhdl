@@ -3,6 +3,11 @@
 -- - cannot have wait
 
 entity function_tb is
+    function entity_is(x : integer)
+        return integer is
+    begin
+        return x + 1;
+    end entity_is;
 end function_tb;
 
 architecture behav of function_tb is
@@ -46,6 +51,8 @@ begin
         assert inc(1) = 2;
         -- Function definitions can go inside `process is` as well.
         assert proc_is(1) = 2;
+        -- And `entity is`.
+        assert entity_is(1) = 2;
         wait;
     end process;
 end behav;

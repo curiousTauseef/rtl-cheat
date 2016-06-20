@@ -1,5 +1,7 @@
 # VHDL Cheat
 
+VHDL minimal examples. Asserts used wherever possible.
+
 1.  Theory
     1.  [Introduction](introduction.md)
     1.  [Applications](applications.md)
@@ -29,7 +31,8 @@
         1.  [Integer types](integer_types_tb.vhdl)
         1.  [Array](array_tb.vhdl)
         1.  [record](record_tb.vhdl)
-    1.  Packages
+        1.  [generic](generic_tb.vhdl)
+    1.  [Packages](package_test_tb.vhdl)
         1.  [standard package](standard_package_tb.vhdl)
         1.  [std_logic](std_logic_tb.vhdl)
     1.  [--stop-delta](stop_delta_tb.vhdl)

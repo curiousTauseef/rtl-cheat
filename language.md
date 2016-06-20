@@ -53,7 +53,7 @@ Somewhat like a variable in higher level languages.
 
 Those are the things that can be output to wave files for further analysis.
 
-Not update immeditaly upon assignment: <http://stackoverflow.com/questions/5060635/how-does-signal-assignment-work-in-a-process>
+Not update immediately upon assignment: <http://stackoverflow.com/questions/5060635/how-does-signal-assignment-work-in-a-process>
 
 ## Operators
 

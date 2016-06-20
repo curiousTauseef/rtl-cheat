@@ -15,14 +15,7 @@ architecture behav of counter_tb is
     signal data : std_logic_vector(width-1 downto 0);
     signal q    : std_logic_vector(width-1 downto 0);
 begin
-    counter_0: entity work.counter port map (
-        rst => rst,
-        clk => clk,
-        load => load,
-        data => data,
-        q => q
-    );
-
+    counter_0: entity work.counter port map (rst, clk, load, data, q);
     process
     begin
         rst <= '1';
