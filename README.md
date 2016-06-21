@@ -2,6 +2,7 @@
 
 VHDL minimal examples. Asserts used wherever possible.
 
+1.  [Getting started](getting-started.md)
 1.  Theory
     1.  [Introduction](introduction.md)
     1.  [Applications](applications.md)
@@ -10,6 +11,7 @@ VHDL minimal examples. Asserts used wherever possible.
     1.  [Standards](standards.md)
     1.  [Wave files](wave-files.md)
     1.  [Language](language.md)
+    1.  [Behavioural vs structural](behavioural-vs-structural.md)
 1.  [Simulators](simulators.md)
     1.  [GHDL](ghdl.md)
 1.  Examples
@@ -47,13 +49,3 @@ VHDL minimal examples. Asserts used wherever possible.
 1.  Helpers
     1.  [Template](template_tb.vhdl)
 1.  [Bibliography](bibliography.md)
-
-## Behavioural vs structural modeling
-
-Behavioural:
-
-- a component is implemented as a black box using high level constructs
-- only IO matters, not how it is generated
-- the component does not need to be synthesizable (?)
-
-Structural: opposite.

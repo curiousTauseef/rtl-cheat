@@ -26,12 +26,12 @@ architecture behav of function_tb is
         --wait for 1 ns;
     end wait_test;
 
-    -- Must have at least one argument.
-    -- Cannot have side effects (TODO pure functions?), so this would be just as useful as a constant.
-    --function no_args()
-    --    return integer is
-    --begin
-    --end no_args;
+    -- No parenthesis on definition.
+    function no_args
+        return integer is
+    begin
+        return 1;
+    end no_args;
 
     -- # pure function
 
@@ -53,6 +53,8 @@ begin
         assert proc_is(1) = 2;
         -- And `entity is`.
         assert entity_is(1) = 2;
+        -- No parenthesis on call.
+        assert no_args = 1;
         wait;
     end process;
 end behav;

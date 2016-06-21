@@ -2,3 +2,4 @@
 *.ghw
 *.vcd
 tmp.*
+tmp_tb.*

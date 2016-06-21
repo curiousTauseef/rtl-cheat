@@ -1,6 +1,8 @@
 entity adder_tb is
 end adder_tb;
 
+use work.common.all;
+
 architecture behav of adder_tb is
     signal i0, i1, ci, s, co : bit;
 begin
@@ -25,7 +27,7 @@ begin
             i0 <= patterns(i).i0;
             i1 <= patterns(i).i1;
             ci <= patterns(i).ci;
-            wait for 1 ns;
+            wait for common_clk_period;
             assert s = patterns(i).s;
             assert co = patterns(i).co;
         end loop;

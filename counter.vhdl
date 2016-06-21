@@ -11,7 +11,7 @@ entity counter is
     port (
         rst, clk, load : in std_logic;
         data : in std_logic_vector(width-1 downto 0);
-        q    : out std_logic_vector(width-1 downto 0)
+        count : out std_logic_vector(width-1 downto 0)
     );
 end entity counter;
 
@@ -30,5 +30,5 @@ begin
             end if;
         end if;
     end process;
-    q <= std_logic_vector(cnt);
+    count <= std_logic_vector(cnt);
 end architecture rtl;

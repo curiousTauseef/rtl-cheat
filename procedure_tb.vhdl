@@ -48,6 +48,17 @@ architecture behav of procedure_tb is
             wait for 1 ns;
         end overload;
 
+    -- No args.
+
+        -- Possible to define, but can it do anything useful?
+        procedure no_args
+        is
+        begin
+            --s0 <= 1;
+            wait for 1 ns;
+        end no_args;
+
+
 begin
     process is
     begin

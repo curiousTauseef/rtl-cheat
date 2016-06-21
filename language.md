@@ -188,8 +188,9 @@ TODO: what can be converted to them?
 
 VHDL 2008 15.10 Reserved words.
 
-## generic
+## wait
 
-<http://www.edaboard.com/thread23546.html>
+TODO how to wait until a given fixed time? Something like:
 
-Like `constant`, but can be defined on the `entity`.
+    wait until now = 10ns;
+    wait until 10ns;
