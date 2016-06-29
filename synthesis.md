@@ -1,6 +1,8 @@
 # Synthesis
 
-How to transform VHDL into a circuit.
+How to transform VHDL into a circuit
+
+<https://en.wikipedia.org/wiki/Logic_synthesis> first step, transform RTL into gates.
 
 That is the whole point of using VHDL instead of C.
 

@@ -25,14 +25,3 @@ Only shows signals that changed at each point in time.
 ### GHDLwave
 
 Binary format created by `ghdl`, can be read by `gtkwave`.
-
-## Viewers
-
-### gtkwave
-
-Major open source one.
-
-TODO:
-
-- at startup, show all signals. Can be done by shift clicking all signals on UI.
-- at startup, fit simulation to window.

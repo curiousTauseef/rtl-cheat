@@ -28,3 +28,7 @@ No Ubuntu package... but compilation very simple: <http://askubuntu.com/a/786463
     ghdl --help
     ghdl --run-help
     ghdl --options-help
+
+## User IO
+
+<https://github.com/tgingold/ghdl/issues/92>

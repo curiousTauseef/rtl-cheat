@@ -20,10 +20,15 @@ Examples:
 - <https://github.com/silverjam/VHDL> medium complexity examples, with test benches
 - <http://www.csee.umbc.edu/portal/help/VHDL/samples/samples.html> not many, but good examples, including a square root calculator
 
+YouTube without source:
+
+- <https://www.youtube.com/channel/UCbUe5SLMSZlSzCuJP81lU0A> has a ton of samples
+
 Cool projects:
 
 - <https://github.com/hamsternz/FPGA_Webserver>
 - <https://github.com/fabioperez/space-invaders-vhdl>
+- <https://github.com/primiano/tetris-vhdl>
 
 Utility libraries:
 

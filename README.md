@@ -5,11 +5,13 @@ VHDL minimal examples. Asserts used wherever possible.
 1.  [Getting started](getting-started.md)
 1.  Theory
     1.  [Introduction](introduction.md)
+        1. [Alternatives](alternatives.md)
     1.  [Applications](applications.md)
     1.  [Synthesis](synthesis.md)
     1.  [History](language.md)
     1.  [Standards](standards.md)
     1.  [Wave files](wave-files.md)
+        1. [gtkwave](gtkwave.md)
     1.  [Language](language.md)
     1.  [Behavioural vs structural](behavioural-vs-structural.md)
 1.  [Simulators](simulators.md)
@@ -19,7 +21,6 @@ VHDL minimal examples. Asserts used wherever possible.
         1.  [Hello world](hello_world_tb.vhdl)
         1.  [Min](min_tb.vhdl)
         1.  [assert](assert_tb.vhdl)
-        1.  [write](write_tb.vhdl)
     1.  Lexer
         1.  [Comments](comments_tb.vhdl)
         1.  [Case insensitive](case_insensitive_tb.vhdl)
@@ -36,6 +37,9 @@ VHDL minimal examples. Asserts used wherever possible.
         1.  [generic](generic_tb.vhdl)
     1.  [Packages](package_test_tb.vhdl)
         1.  [standard package](standard_package_tb.vhdl)
+        1.  textio
+            1.  [write](write_tb.vhdl)
+            1.  [read](read_tb.vhdl)
         1.  [std_logic](std_logic_tb.vhdl)
     1.  [--stop-delta](stop_delta_tb.vhdl)
 1.  Applications
