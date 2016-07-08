@@ -10,7 +10,6 @@ Introduction tutorials:
 
 Language references:
 
-,s
 - <http://vhdl.renerta.com/mobile/index.html>
 - <http://www.csee.umbc.edu/portal/help/VHDL/summary.html>. Very good.
 
@@ -33,3 +32,7 @@ Cool projects:
 Utility libraries:
 
 - <https://github.com/VLSI-EDA/PoC>
+
+Language agnostic circuit design:
+
+- <https://www.musicworks.ca/diy/build-your-own-tone-generator>

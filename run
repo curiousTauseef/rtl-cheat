@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # No point in using Makefile, since we don't have
-# one generated output per input.
+# one generated output per input without GCC.
 
 set -e
 

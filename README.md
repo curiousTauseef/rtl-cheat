@@ -5,7 +5,8 @@ VHDL minimal examples. Asserts used wherever possible.
 1.  [Getting started](getting-started.md)
 1.  Theory
     1.  [Introduction](introduction.md)
-        1. [Alternatives](alternatives.md)
+    1.  Alternatives
+        1. [Verilog](verilog/)
     1.  [Applications](applications.md)
     1.  [Synthesis](synthesis.md)
     1.  [History](language.md)

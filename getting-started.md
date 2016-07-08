@@ -1,6 +1,10 @@
 # Getting started
 
-Install GHDL: http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463
+Ubuntu 16.04:
+
+    sudo apt-get install verilator iverilog
+
+Install GHDL: <http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463>
 
 This was tested on GHDL `v0.33`.
 

@@ -9,3 +9,11 @@ Behavioural:
 - the component does not need to be synthesizable (?)
 
 Structural: opposite.
+
+## RTL
+
+<http://stackoverflow.com/questions/29815188/difference-between-behavioral-rtl-and-gate-level>
+
+## Gate level
+
+TODO.

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Icarus.
+iverilog -o hello.vvp hello.v
+vvp hello.vvp
+iverilog -o counter_tb.vvp counter_tb.v
+vvp counter_tb.vvp
+iverilog -o negator_tb.vvp negator_tb.v
+vvp negator_tb.vvp
+
+# Verilator.
+
+verilator -Wall --cc hello.v --exe hello.cpp
+make -C obj_dir -f Vhello.mk Vhello
+./obj_dir/Vhello
+
+verilator -Wall --cc negator.v --exe negator.cpp
+make -C obj_dir -f Vnegator.mk Vnegator
+./obj_dir/Vnegator
+
+# Unsupported testbench features...
+# which are actually more elegantly done in C++.
+#verilator -Wall --cc negator_tb.v --exe negator_tb.cpp
+#make -C obj_dir -f Vnegator_tb.mk Vnegator_tb
+#./obj_dir/Vnegator_tb
