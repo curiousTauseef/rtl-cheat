@@ -1,3 +1,4 @@
+#include <cassert>
 #include <iostream>
 
 #include "Vnegator.h"
@@ -5,10 +6,26 @@
 
 int main(int argc, char **argv, char **env) {
     Verilated::commandArgs(argc, argv);
-    vluint64_t main_time = 0;
     Vnegator *top = new Vnegator;
-    top->in = 0;
+
+    /*
+    Since this is sequential, we only need to teach each input once,
+    history does not matter.
+    */
+    {
+        top->in = 0;
+        top->eval();
+        assert(top->out == 1);
+
+        top->in = 1;
+        top->eval();
+        assert(top->out == 0);
+    }
+
+    /* Set a clock as input and print output. Just for fun. */
+    vluint64_t main_time = 0;
     std::cout << "in out" << std::endl;
+    top->in = 0;
     while (main_time < 10 && !Verilated::gotFinish()) {
         top->eval();
         if (top->in == 0)
@@ -23,6 +40,7 @@ int main(int argc, char **argv, char **env) {
         top->in = !top->in;
         main_time++;
     }
+
     top->final();
     delete top;
 }

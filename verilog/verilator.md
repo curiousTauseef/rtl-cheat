@@ -23,3 +23,9 @@ When installed from source, typically equals:
 ## VCD
 
 Generated with a C++ API, like everything else. Awesome.
+
+## Types
+
+TODO: what to use for what?
+
+- `vluint64_t`

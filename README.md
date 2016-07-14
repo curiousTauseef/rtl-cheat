@@ -15,6 +15,7 @@ VHDL minimal examples. Asserts used wherever possible.
         1. [gtkwave](gtkwave.md)
     1.  [Language](language.md)
     1.  [Behavioural vs structural](behavioural-vs-structural.md)
+    1.  [Proprietary tools](proprietary-tools.md)
 1.  [Simulators](simulators.md)
     1.  [GHDL](ghdl.md)
 1.  Examples

@@ -1,5 +1,7 @@
 /* The simplest non-identity combinatorial circuit. */
-module negator(input in, output out);
-    wire in, out;
+module negator(
+    input wire in,
+    output wire out
+);
     assign out = ~in;
 endmodule

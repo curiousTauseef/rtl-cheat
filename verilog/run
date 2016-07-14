@@ -3,22 +3,35 @@
 set -e
 
 # Icarus.
+
+printf '\n# hello\n'
 iverilog -o hello.vvp hello.v
 vvp hello.vvp
-iverilog -o counter_tb.vvp counter_tb.v
-vvp counter_tb.vvp
+
+printf '\n# negator\n'
 iverilog -o negator_tb.vvp negator_tb.v
 vvp negator_tb.vvp
 
+printf '\n# counter\n'
+iverilog -o counter_tb.vvp counter_tb.v
+vvp counter_tb.vvp
+
 # Verilator.
 
+printf '\n# hello\n'
 verilator -Wall --cc hello.v --exe hello.cpp
 make -C obj_dir -f Vhello.mk Vhello
 ./obj_dir/Vhello
 
+printf '\n# negator\n'
 verilator -Wall --cc negator.v --exe negator.cpp
 make -C obj_dir -f Vnegator.mk Vnegator
 ./obj_dir/Vnegator
+
+printf '\n# counter\n'
+verilator -Wall --cc counter.v --exe counter.cpp
+make -C obj_dir -f Vcounter.mk Vcounter
+./obj_dir/Vcounter
 
 # Unsupported testbench features...
 # which are actually more elegantly done in C++.

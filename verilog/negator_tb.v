@@ -8,8 +8,7 @@ module negator_tb();
         $dumpfile("negator_tb.vcd");
         $dumpvars(0, negator_tb);
         $display ("time\t clk out");
-        $monitor ("%g\t %b   %b",
-            $time, clock, out);
+        $monitor ("%g\t %b   %b", $time, clock, out);
         clock = 0;
         #10 $finish;
     end

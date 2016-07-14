@@ -2,14 +2,14 @@
 module counter_tb();
     // Declare inputs as regs and outputs as wires.
     reg clock, reset, enable;
-    wire [3:0] counter_out;
+    wire [1:0] out;
 
     initial begin
         $dumpfile("counter_tb.vcd");
         $dumpvars(0, counter_tb);
         $display ("time\t clk reset enable counter");
         $monitor ("%g\t %b   %b     %b      %b",
-            $time, clock, reset, enable, counter_out);
+            $time, clock, reset, enable, out);
         clock = 1;
         reset = 0;
         enable = 0;
@@ -29,6 +29,6 @@ module counter_tb();
         clock,
         reset,
         enable,
-        counter_out
+        out
     );
 endmodule

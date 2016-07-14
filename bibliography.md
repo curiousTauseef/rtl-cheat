@@ -25,6 +25,7 @@ YouTube without source:
 
 Cool projects:
 
+- <https://hernan.de/blog/2015/06/16/vlsi-final-project/>, also talks about synthesization done via <https://www.mosis.com/>
 - <https://github.com/hamsternz/FPGA_Webserver>
 - <https://github.com/fabioperez/space-invaders-vhdl>
 - <https://github.com/primiano/tetris-vhdl>

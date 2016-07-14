@@ -17,3 +17,14 @@ That is the whole point of using VHDL instead of C.
 Many constructs are non-synthesizable.
 
 There is an official synthesizable subset of VHDL.
+
+## Tools
+
+Open source lists:
+
+- <http://electronics.stackexchange.com/questions/60571/open-source-verilog-synthesizer?rq=1>
+
+Open source tools:
+
+- <https://github.com/cliffordwolf/yosys>
+- <https://github.com/verilog-to-routing/vtr-verilog-to-routing>
