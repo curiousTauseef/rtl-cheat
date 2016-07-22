@@ -1,6 +1,8 @@
 #include <cassert>
 #include <iostream>
 
+#include <typeinfo>
+
 #include "Vcounter.h"
 #include "verilated.h"
 
@@ -49,8 +51,6 @@ int main(int argc, char **argv, char **env) {
             top->reset = 0;
         top->clock = 1;
         top->eval();
-
-        std::cout << top->out << std::endl;
 
         /* Assert changes that happened. */
         assert(top->out == main_time);

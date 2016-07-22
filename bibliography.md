@@ -37,3 +37,7 @@ Utility libraries:
 Language agnostic circuit design:
 
 - <https://www.musicworks.ca/diy/build-your-own-tone-generator>
+
+Educational CPUs:
+
+- <http://electronics.stackexchange.com/questions/1754/readable-and-educational-implementations-of-a-cpu-in-a-hdl>

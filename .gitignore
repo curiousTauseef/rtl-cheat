@@ -1,5 +1,11 @@
-*.cf
-*.ghw
 *.vcd
+
 tmp.*
 tmp_tb.*
+
+# GHDL
+*.cf
+*.ghw
+
+# Verilator
+obj_dir
