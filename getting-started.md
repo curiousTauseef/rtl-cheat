@@ -4,9 +4,7 @@ Tested on Ubuntu 16.04:
 
     sudo apt-get install gtkwave libsdl2-dev verilator iverilog
 
-Install GHDL: <http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463>
-
-This was tested on GHDL `v0.33`.
+Install GHDL: <http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463> Tested on GHDL `v0.33`.
 
 ## VHDL and Verilog
 
@@ -15,7 +13,7 @@ Run all testbenches:
     cd vhdl
     ./run
 
-    cd ../verilog
+    cd verilog
     ./run
 
 Run a single testbench: either of:
@@ -35,3 +33,11 @@ We use the following naming convention: files that end in `XXX_tb.vhdl` are runn
 They may or may not have a corresponding `XXX.vhdl` file which is the component being tested.
 
 If that file exists, it must be analyzed before the `_tb` is run.
+
+## Interactive
+
+    cd interactive
+    make
+    make run
+    make run RUN=move
+    make clean

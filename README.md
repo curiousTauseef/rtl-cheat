@@ -1,6 +1,6 @@
 # RTL Cheat
 
-VHDL and Verilog minimal examples. General IC design and synthesis. Asserts used wherever possible.
+VHDL and Verilog minimal examples. IC design and synthesis tutorials. Asserts used wherever possible.
 
 1.  [Getting started](getting-started.md)
 1.  Examples
