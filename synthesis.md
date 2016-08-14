@@ -25,22 +25,14 @@ There is an official synthesizable subset of VHDL.
 Open source lists:
 
 - <http://electronics.stackexchange.com/questions/60571/open-source-verilog-synthesizer?rq=1>
+- <https://githubbcom/cjdrake/pyeda>
 
 ### Open source tools
 
 Open source tools:
 
 - <https://github.com/verilog-to-routing/vtr-verilog-to-routing>
-
-#### Yosys
-
-<https://github.com/cliffordwolf/yosys>
-
-Input: Verilog 2005.
-
-Output: TODO check: Verilog 2005 containing only primitives or cell library components.
-
-TODO no GDSII output?
+- Yosys
 
 ## GDSII
 
@@ -50,16 +42,4 @@ IC description format, which describes the 3D structure of the chip.
 
 TODO if I send it to a fab with a lump of cash, will they print it?
 
-Open source generator tool (place and route): <http://stackoverflow.com/questions/4180596/verilog-to-gdsii-compiler-open-source>
-
-## Timing
-
-## Delay
-
-Fundamental analysis of how fast clock the circuit can operate under.
-
-### SDF
-
-<https://en.wikipedia.org/wiki/Standard_Delay_Format>
-
-<http://www.asic-world.com/verilog/gate1.html> says a gate level representation is the most common case for an SDF simulation.
+Open source generator tool (place and route, `pnr`): <http://stackoverflow.com/questions/4180596/verilog-to-gdsii-compiler-open-source>

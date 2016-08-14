@@ -90,3 +90,12 @@ Explicitly defined subset defined in Verilog 2005 Chapter 7 "Gate- and switch-le
 ### Buffer
 
 <https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/CompOrg/tristate.html>
+
+## Attributes
+
+<http://covered.sourceforge.net/user/chapter.attr.html>
+
+Yosys generates tons of them:
+
+    (* src = "counter.v:15" *)
+    wire [1:0] _00_;

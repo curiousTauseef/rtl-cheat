@@ -41,3 +41,7 @@ Language agnostic circuit design:
 Educational CPUs:
 
 - <http://electronics.stackexchange.com/questions/1754/readable-and-educational-implementations-of-a-cpu-in-a-hdl>
+
+Interesting recycling bins:
+
+- <https://github.com/cirosantilli/ASIC>

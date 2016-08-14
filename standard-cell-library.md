@@ -21,3 +21,7 @@ TODO find spec. Mentioned at: http://www.csee.umbc.edu/~cpatel2/links/641/slides
 ## Open source standard cell libraries
 
 <http://www.vlsitechnology.org/html/libraries.html>
+
+## Technology mapping
+
+Mapping of the netlist cell libraries.

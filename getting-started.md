@@ -2,7 +2,7 @@
 
 Tested on Ubuntu 16.04:
 
-    sudo apt-get install gtkwave libsdl2-dev verilator iverilog
+    sudo apt-get install gtkwave libsdl2-dev verilator iverilog yosys
 
 Install GHDL: <http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463> Tested on GHDL `v0.33`.
 

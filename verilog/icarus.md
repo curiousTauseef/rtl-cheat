@@ -8,3 +8,5 @@ Generate VCD: <http://iverilog.wikia.com/wiki/GTKWAVE>:
      $dumpvars(0,test);
 
 Ugly, embedded into simulation.
+
+Supports up to Verilog 2005.

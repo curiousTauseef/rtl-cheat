@@ -9,3 +9,6 @@ tmp_tb.*
 
 # Verilator
 obj_dir
+
+# Yosys
+verilog/yosys_syn
