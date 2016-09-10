@@ -45,3 +45,7 @@ Educational CPUs:
 Interesting recycling bins:
 
 - <https://github.com/cirosantilli/ASIC>
+
+Tools:
+
+- <https://www.edaplayground.com> web editor front-end for open source synthesis + simulation tools, and even a few closed source ones.
