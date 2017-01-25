@@ -4,19 +4,47 @@ University courses seem like the best option to learn their stuff? They have a c
 
 Major tools:
 
+- VCS
 - design compiler: synthesis: RTL -> gate level RTL
-- IC compiler (`icc`): place and route: RTL -> GDSII
+- IC compiler (`icc`)
 - PrimeTime: verifications like timing and power
 
-Couldn't find any free Synopsys official tutorials
+Synopsys
+
+- <http://www.synopsys.com/Tools/Implementation/Pages/default.aspx>
+
+Couldn't find any free decent Synopsys official tutorials. Likely semi-illegal. Lab notes are your best bet.
 
 - <http://www.csl.cornell.edu/courses/ece5745/> Shows how the major tools are inter-related.
 
-Learning outlines:
+Useless learning outlines:
 
 - <http://www.synopsys.com/Community/UniversityProgram/Pages/Curriculum.aspx>
 - <http://www.synopsys.com/support/training/Pages/default.aspx>
 
-Most interesting tools:
+Customer only documentation at:
 
-- http://www.synopsys.com/Tools/Implementation/Pages/default.aspx
+- <https://solvnet.synopsys.com/>
+
+## VCS
+
+Simulator. Like `iverlog`. Compiles to ELF binaries, outputs VCD.
+
+2016.06:
+
+    vcs a.v
+    vcs a_tb.v
+    ./simv
+
+Select output executable name:
+
+    vcs -o a.out a_tb.v
+    ./a.out
+
+## ICC2
+
+Place and route: RTL -> GDSII.
+
+Replaced ICC at some point.
+
+`--help` is short and teaches all you need to know about CLI options. Kudos.

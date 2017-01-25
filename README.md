@@ -19,12 +19,11 @@ VHDL and Verilog minimal examples. IC design and synthesis tutorials. Asserts us
         1. [gtkwave](gtkwave.md)
     1.  [Language](language.md)
     1.  [Behavioural vs structural](behavioural-vs-structural.md)
-    1.  [Proprietary tools](proprietary-tools.md)
     1.  [Design](design.md)
         1.  [Clock tree](clock-tree.md)
         1.  [CPU](cpu.md)
     1.  [Latch](latch.md)
-    1.  Vendors
+    1.  [Vendors](vendors.md)
         1. [Synopsys](synopsys.md)
     1.  [FPGA](fpga.md)
     1.  [Microchip fabrication](microchip-fabrication.md)

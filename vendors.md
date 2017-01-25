@@ -1,4 +1,4 @@
-# Proprietary tools
+# Vendors
 
 The big three:
 
@@ -7,7 +7,10 @@ The big three:
 - <https://en.wikipedia.org/wiki/Cadence_Design_Systems>: several
     - Incisive simulation toolest: https://en.wikipedia.org/wiki/NCSim 
 - <https://en.wikipedia.org/wiki/Mentor_Graphics>. Choose to target end user machines instead of big company controlled ones.
+    - 2016: sold to Siemens
     - ModelSim : HDL simulator
+    - Calibre: Physical implementation
+    - Calypto Power Pro: power estimates. Bought in 2015 with the Calypto company.
 
 Others:
 

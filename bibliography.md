@@ -19,6 +19,10 @@ Examples:
 - <https://github.com/silverjam/VHDL> medium complexity examples, with test benches
 - <http://www.csee.umbc.edu/portal/help/VHDL/samples/samples.html> not many, but good examples, including a square root calculator
 
+University courses:
+
+- <http://www.csee.umbc.edu/~cpatel2/links/641/> (2008)
+
 YouTube without source:
 
 - <https://www.youtube.com/channel/UCbUe5SLMSZlSzCuJP81lU0A> has a ton of samples
@@ -49,3 +53,12 @@ Interesting recycling bins:
 Tools:
 
 - <https://www.edaplayground.com> web editor front-end for open source synthesis + simulation tools, and even a few closed source ones.
+
+Tutorials on proprietary tools (likely illegal):
+
+- <http://hdvacademy.blogspot.co.uk/p/index.html>
+
+Standards:
+
+- <https://en.wikipedia.org/wiki/Accellera>
+- <https://en.wikipedia.org/wiki/Unified_Power_Format>

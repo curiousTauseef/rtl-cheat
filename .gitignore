@@ -12,3 +12,19 @@ obj_dir
 
 # Yosys
 verilog/yosys_syn
+
+## Synopsys
+
+# vcs
+csrc/
+simv
+simv.daidir/
+ucli.key
+
+## Cadence
+
+# Incisive.
+INCA_libs/
+ncsim.log
+ncverilog.history
+ncverilog.log
