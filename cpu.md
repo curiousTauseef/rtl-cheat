@@ -6,6 +6,7 @@
 -   <https://www.cs.utexas.edu/~byoung/cs429/slides6-isa1.pdf>
     - <https://xsznix.github.io/js-y86/> js assembler and simulator
     - <https://github.com/linusyang/python-y86>
+-   <https://github.com/ZipCPU>
 
 ## Benchmarks
 

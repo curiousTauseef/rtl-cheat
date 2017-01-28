@@ -25,3 +25,9 @@ TODO find spec. Mentioned at: http://www.csee.umbc.edu/~cpatel2/links/641/slides
 ## Technology mapping
 
 Mapping of the netlist cell libraries.
+
+## Double width cells
+
+## INVX2
+
+TODO: what is the point of such cells?
