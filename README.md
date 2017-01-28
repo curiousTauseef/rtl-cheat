@@ -26,6 +26,8 @@ VHDL and Verilog minimal examples. IC design and synthesis tutorials. Asserts us
     1.  [Latch](latch.md)
     1.  Vendors
         1. [Synopsys](synopsys.md)
+    1.  [FPGA](fpga.md)
+    1.  [Microchip fabrication](microchip-fabrication.md)
 1.  [Simulators](simulators.md)
     1.  [GHDL](ghdl.md)
 1.  [Bibliography](bibliography.md)
