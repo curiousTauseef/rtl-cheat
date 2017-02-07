@@ -16,3 +16,11 @@ Major revisions:
 ## Language reference manual
 
 A way people refer to the standard, and is written on the cover.
+
+## Formats
+
+<https://en.wikipedia.org/wiki/EDA_database>
+
+## Organizations
+
+<https://en.wikipedia.org/wiki/Silicon_Integration_Initiative>

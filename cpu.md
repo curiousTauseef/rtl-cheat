@@ -1,5 +1,7 @@
 # CPU
 
+-   <https://en.wikipedia.org/wiki/1-bit_architecture>
+
 ## Educational
 
 -   <https://github.com/zhemao/ez8>

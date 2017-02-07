@@ -31,3 +31,58 @@ Mapping of the netlist cell libraries.
 ## INVX2
 
 TODO: what is the point of such cells?
+
+## Constraints
+
+### Fixed VCC and VDD
+
+Every cell needs VCC and VDD, and so chips look globally like this:
+
+    -----+-----------+----- VCC
+         |           |
+     +---+----+  +---+----+
+     | cell 1 |  | cell 2 |
+     +---+----+  +---+----+
+         |           |
+    -----+------+----+----- VDD
+                |
+            +---+----+
+            | cell 3 |
+            +---+----+
+                |
+    --------+---+---------- VCC
+            |
+        +---+----+
+        | cell 4 |
+        +---+----+
+            |
+    --------+-------------- VDD
+
+So you have to design cells with that in mind.
+
+Shown at: <https://www.youtube.com/watch?v=jZT4kcMQagI>
+
+### Fixed height
+
+You design cells in 2D. The height of each part is fixed. But widths vary, and you can control electrical properties with that.
+
+TODO: how are simulations for cell libraries done?
+
+## Tools
+
+Create cell libraries:
+
+- <https://www.youtube.com/watch?v=DPCu822wXPQ> Cadence tutorial - CMOS Inverter Layout
+- <https://www.csee.umbc.edu/~tinoosh/cmpe641/slides/lect02_std_cells.pdf> shows tool set and formats
+
+## SVT
+
+## LVT
+
+## HVT
+
+## Vt
+
+Vt is the threshold voltage: <https://en.wikipedia.org/wiki/Threshold_voltage>
+
+<http://www.edaboard.com/thread101239.html>

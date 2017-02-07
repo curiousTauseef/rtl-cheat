@@ -2,8 +2,6 @@
 
 Or what happens after GDSII.
 
-<https://en.wikipedia.org/wiki/Mask_set>
-
 Tools:
 
 - bed of nails: TODO
@@ -105,7 +103,7 @@ Made development during 2 weeks that other people had a mandatory vacation, but 
 
 ## Multi-project wafer
 
-- <https://www.mosis.com/what-is-mosis> <https://hernan.de/blog/2015/06/16/vlsi-final-project/> multi-project wafer
+- <https://en.wikipedia.org/wiki/MOSIS> <https://www.mosis.com/what-is-mosis> <https://hernan.de/blog/2015/06/16/vlsi-final-project/> multi-project wafer
 - <http://www.baysand.com/solutions/mpw/ultrashuttle/>
 
 ## Easter eggs
@@ -121,3 +119,21 @@ Made development during 2 weeks that other people had a mandatory vacation, but 
 Sources
 
 - <https://semiaccurate.com/> amazing quality, as random Google searches quickly reveal
+
+## Photolithography
+
+- <https://en.wikipedia.org/wiki/Photolithography>
+- <https://en.wikipedia.org/wiki/Mask_set>
+- <https://en.wikipedia.org/wiki/Optical_proximity_correction>
+
+TODO: who makes the masks? Customer?
+
+## VIA
+
+<https://en.wikipedia.org/wiki/Via_(electronics)>
+
+## Process corners
+
+## PVT
+
+<https://en.wikipedia.org/wiki/Process_corners>

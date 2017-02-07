@@ -1,4 +1,5 @@
 *.vcd
+*.vvp
 
 tmp.*
 tmp_tb.*
@@ -24,7 +25,9 @@ ucli.key
 ## Cadence
 
 # Incisive.
+.simvision/
 INCA_libs/
 ncsim.log
 ncverilog.history
+ncverilog.key
 ncverilog.log

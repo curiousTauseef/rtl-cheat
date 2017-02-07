@@ -22,6 +22,7 @@ Examples:
 University courses:
 
 - <http://www.csee.umbc.edu/~cpatel2/links/641/> (2008)
+- <https://www.csee.umbc.edu/~tinoosh/cmpe641/> (2016)
 - <http://www.ee.virginia.edu/~mrs8n/cadence/Cadencetutorials.html>, Cadence
 
 YouTube without source:
