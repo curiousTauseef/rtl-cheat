@@ -18,6 +18,7 @@ Examples:
 - <https://github.com/marceloboeira/vhdl-examples> a few simple examples, but no test benches?
 - <https://github.com/silverjam/VHDL> medium complexity examples, with test benches
 - <http://www.csee.umbc.edu/portal/help/VHDL/samples/samples.html> not many, but good examples, including a square root calculator
+- <https://github.com/ucb-bar/plsi>, specially <https://github.com/ucb-bar/plsi/tree/master/src/addons/synthesis>
 
 University courses:
 
@@ -39,6 +40,7 @@ Cool projects:
 Utility libraries:
 
 - <https://github.com/VLSI-EDA/PoC>
+- <https://github.com/seldridge/verilog>
 
 Language agnostic circuit design:
 

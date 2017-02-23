@@ -8,8 +8,18 @@ Higher level design concepts.
 
 -   Clock Tree Synthesis (CTS)
 
--   Multi mode multi corner (MMMC)
-
 -   Macros: <http://asic-soc.blogspot.co.uk/2007/11/what-is-difference-between-soft-macro.html> Hard macro looks like a custom hand-written per-project cell.
 
     There are also netlist level macros (firm macros), and soft macros (just plain RTL).
+
+## MMMC
+
+Multi mode multi corner (MMMC).
+
+### WCL
+
+Worst Case Low temperature (-40C): <http://decemberyork.blogspot.co.uk/2016/02/mmmc-multi-mode-multi-corner.html>
+
+## Buses
+
+<https://en.wikipedia.org/wiki/Bus_encoding>

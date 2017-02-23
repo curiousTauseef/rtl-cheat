@@ -137,3 +137,13 @@ TODO: who makes the masks? Customer?
 ## PVT
 
 <https://en.wikipedia.org/wiki/Process_corners>
+
+## Nodes
+
+### 14 nm
+
+### 16 nm
+
+Both are basically the same:
+
+- <https://www.quora.com/Why-does-NVIDIA-use-a-16nm-FinFET-architecture-for-their-new-Pascal-GPUs-even-though-AMD-already-uses-14nm>

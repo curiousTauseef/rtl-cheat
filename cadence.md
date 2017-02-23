@@ -82,73 +82,6 @@ Looks like a step debugger / waveform viewer for Verilog.
 
 There are several open videos from Cadence about it: <https://www.youtube.com/watch?v=a2YmCK0uzJs&list=PLYdInKVfi0KYzCjnkgRgDXFJcKyQRz6eM>
 
-## Genus
-
-<https://www.cadence.com/content/cadence-www/global/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html>
-
-Synthesis.
-
-Replaces RTL Compiler.
-
-TCL shell (LOL TCL again, it rules the EDA industry):
-
-    genus
-
-List help commands:
-
-    genus -help
-
-Run `tcl` synthesis script:
-
-    genus -files a.tcl
-
-After running the scripts, you can visualize the synthesis from inside genus with:
-
-    gui_show
-
-TODO: GUI is just a viewer, or can you edit anything in it?
-
-Generated `.cmd` files list every command that was run, including GUI commands, all of which have a text counterpart.
-
-To restore the synthesis later, you can do either of:
-
-    read_db design_phase.db
-
-after a `write_db`.
-
-Output is ready to go into Innovus with:
-
-    write_design -innovus -gzip_files -basename mydesign
-
-you just need to sourcing the `DESIGN.invs_setup.tcl` script.
-
-### report
-
-### generate_reports
-
-`generate_reports` appears to do multiple `report XXX` at once:
-
-Get PPA metrics:
-
-    generate_reports -outdir out -tag phase
-
-now directory `out` appears containing the following interesting files:
-
-    phase_area.rpt
-    phase_gates.rpt
-    phase_qor.rpt
-    phase_time.rp
-
-`placed_qor.rpt` contains a high level overview of the implementation quality (Quality Of Results: <https://en.wikipedia.org/wiki/Quality_of_results>). Things like slack of most critical path and timing violation counts.
-
-`phase_area.rpt` contains a list of the top N most critical paths, from most critical to least.
-
-At the end of each path we can see how much time we have left there:
-
-    Timing slack :     117ps
-
-Other files contain things like cell count, total area of those cells and total leak in nW.
-
 ## Innovus
 
 Run script:
@@ -197,3 +130,9 @@ GUI is also an editor, as it has an ECO menu. But you shouldn't do that often of
 ---
 
 TODO: generate GDSII.
+
+## Jasper
+
+Formal verification.
+
+Implements SystemVerilog Assertions (SVA), which are now part of the Verilog standard (which is *both* a hardware description *and* verification language): <https://en.wikipedia.org/wiki/SystemVerilog#Assertions>

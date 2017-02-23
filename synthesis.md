@@ -1,6 +1,19 @@
 # Synthesis
 
-How to transform VHDL into a circuit
+Transform VHDL into a circuit.
+
+The circuit can then be represented with an schematic, with cells of the cell library being black boxes.
+
+The output of this step is:
+
+- another Verilog file, but one that only contains cells of the cell library, and interconnections between them.
+- a `.db` database file, that contains the same (?) information as above, but in a format that is easier for the tools to parse and use
+
+After this step, you can get reasonable metrics for:
+
+- performance (timing): find critical paths, considering delays of each cell
+- area: you already know how many cells will be put into the chip
+- power: basically a function of the number of each type of cells, so we have that
 
 <https://en.wikipedia.org/wiki/Logic_synthesis> first step, transform RTL into gates.
 

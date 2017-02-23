@@ -2,10 +2,10 @@
 
 *latch* normally means non-edge triggered. More precisely, transparent latch.
 
-## Flip-flop
+Flip-flops are edge triggered only.
 
-Edge triggered only.
+Latches are bad for you design.
 
-<https://en.wikipedia.org/wiki/Flip-flop_(electronics)>
-
-Verilog: <http://www.asic-world.com/verilog/gate2.html>
+- <https://en.wikipedia.org/wiki/Flip-flop_(electronics)>
+- <http://www.asic-world.com/verilog/gate2.html>
+- <http://electronics.stackexchange.com/questions/38645/why-are-inferred-latches-bad>
