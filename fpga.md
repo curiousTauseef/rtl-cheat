@@ -9,6 +9,8 @@ But they are still way slower and more expensive than the final ASIC.
 So basically every application that makes a lot of money deserves a dedicated ASIC.
 
 - <http://stackoverflow.com/questions/7458850/what-are-some-practical-applications-of-an-fpga>
+- <http://stackoverflow.com/questions/2909035/algorithms-fpgas-dominate-cpus-on>
+- <http://stackoverflow.com/questions/317731/cuda-vs-fpga>
 - <http://electronics.stackexchange.com/questions/97277/when-can-fpgas-be-used-and-microcontrollers-dsps-not>
 - <https://www.quora.com/What-are-the-most-common-uses-for-FPGA-today>
 

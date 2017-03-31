@@ -70,3 +70,10 @@ Standards:
 NES implementations:
 
 - <https://github.com/brianbennett/fpga_nes>
+
+Where to learn stuff lists:
+
+- https://www.u-cursos.cl/usuario/9553d43f5ccbf1cca06cc02562b4005e/mi_blog/r/[Razavi]_Design_Of_Analog_Cmos_Integrated_Circuits.pdf
+- https://www.quora.com/What-are-some-must-have-books-on-analog-IC-design
+- http://electronics.stackexchange.com/questions/22746/good-source-to-learn-about-the-basics-of-integrated-circuits
+- http://electronics.stackexchange.com/questions/13440/microcontroller-cpu-design-book/
