@@ -20,4 +20,4 @@ module counter (
             out <= out + 1;
         end
     end
-endmodube
+endmodule

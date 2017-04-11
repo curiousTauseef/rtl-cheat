@@ -11,6 +11,7 @@
     1. [Hello world](hello.v)
     1. [Negator](negator.v)
     1. [Counter](counter.v)
+    1. [RAM](ram.v)
 1.  [Bibliography](bibliography.md)
 
 ## Logic synthesis
