@@ -1,24 +1,26 @@
 .POSIX:
 
-.PHONY: clean
+.PHONY: all clean run
 
-RUN = main
+RUN ?= move
+OUT_EXT ?= .out
+VERILATOR_DIR = ./obj_dir/
 
-all: ./obj_dir/Vmain ./obj_dir/Vmove display.out
+all: $(VERILATOR_DIR)Vand2 $(VERILATOR_DIR)Vmove display$(OUT_EXT)
 
-./obj_dir/Vmain: main.v main.cpp fps.hpp
-	verilator -Wall --cc main.v --exe main.cpp
-	make -C obj_dir -f Vmain.mk Vmain LIBS='-lSDL2'
+$(VERILATOR_DIR)Vand2: and2.v and2.cpp fps.hpp
+	verilator -Wall --cc and2.v --exe and2.cpp
+	make -C obj_dir -f Vand2.mk Vand2 LIBS='-lSDL2'
 
-./obj_dir/Vmove: move.v move.cpp fps.hpp
+$(VERILATOR_DIR)Vmove: move.v move.cpp fps.hpp
 	verilator -Wall --cc move.v --exe move.cpp
 	make -C obj_dir -f Vmove.mk Vmove CXXFLAGS='--std=c++11 -Wall' LIBS='-lSDL2'
 
-display.out: display.cpp
-	g++ -o display.out display.cpp -lm -lSDL2
+display$(OUT_EXT): display.cpp
+	g++ -o '$@' '$<' -lm -lSDL2
 
 clean:
-	rm -rf obj_dir *.out
+	rm -rf obj_dir *'$(OUT_EXT)'
 
 run: all
-	./obj_dir/V$(RUN)
+	'$(VERILATOR_DIR)V$(RUN)'

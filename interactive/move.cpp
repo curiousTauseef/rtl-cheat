@@ -1,3 +1,5 @@
+const char *help = "asdw: move | q: quit";
+
 #include <cmath>
 #include <cstdlib>
 #include <time.h>
@@ -9,7 +11,7 @@
 
 #include "fps.hpp"
 
-#define WINDOW_WIDTH 600
+#define WINDOW_WIDTH 512
 #define RECTS_PER_WINDOW (4)
 #define RECT_WIDTH (WINDOW_WIDTH / RECTS_PER_WINDOW)
 #define FASTEST_TICK_PERIOD_S (1.0 / 4.0)
@@ -27,7 +29,7 @@ int main(int argc, char **argv) {
 
     SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer);
-    SDL_SetWindowTitle(window, "asdw: move | q: quit");
+    SDL_SetWindowTitle(window, help);
 
     fps_init();
     top->clock = 0;

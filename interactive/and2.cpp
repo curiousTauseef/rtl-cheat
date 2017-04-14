@@ -1,11 +1,13 @@
+const char *help = "hold 'a' and 'b' at the same time -> the screen turns red";
+
 #include <cstdlib>
 
-#include "Vmain.h"
+#include "Vand2.h"
 #include "verilated.h"
 
 #include <SDL2/SDL.h>
 
-#define WINDOW_WIDTH 600
+#define WINDOW_WIDTH 512
 #define WINDOW_HEIGHT (WINDOW_WIDTH)
 
 int main(int argc, char **argv, char **env) {
@@ -21,11 +23,11 @@ int main(int argc, char **argv, char **env) {
     b_pressed = 0;
 
     Verilated::commandArgs(argc, argv);
-    Vmain *top = new Vmain;
+    Vand2 *top = new Vand2;
 
     SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer);
-    SDL_SetWindowTitle(window, "press 'a' and 'b' at the same time -> the screen turns red");
+    SDL_SetWindowTitle(window, help);
     rect.x = 0;
     rect.y = 0;
     rect.w = WINDOW_WIDTH;
