@@ -26,21 +26,6 @@ Customer only documentation at:
 
 - <https://solvnet.synopsys.com/>
 
-## VCS
-
-Simulator. Like `iverlog`. Compiles to ELF binaries, outputs VCD.
-
-2016.06:
-
-    vcs a.v
-    vcs a_tb.v
-    ./simv
-
-Select output executable name:
-
-    vcs -o a.out a_tb.v
-    ./a.out
-
 ## ICC2
 
 Place and route: RTL -> GDSII.
@@ -48,3 +33,9 @@ Place and route: RTL -> GDSII.
 Replaced ICC at some point.
 
 `--help` is short and teaches all you need to know about CLI options. Kudos.
+
+## Verdi
+
+Debugger.
+
+Acquired with Novas in 2008.
