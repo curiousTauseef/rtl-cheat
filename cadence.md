@@ -17,7 +17,7 @@ Uses Flexera license manager: <https://www.flexerasoftware.com/enterprise/produc
 
 ## Documentation
 
-<https://support.cadence.com>
+<https://support.cadence.com>, login only.
 
 Rapid adoption kits (RAK) are good single PDF + sample code with dummy cell libraries getting started guides. Some good ones:
 
@@ -32,7 +32,12 @@ Docs also locally under:
 
 But they have terrible names..... e.g. you're expected to know that `TCR` is TCL Command Reference, `UG` is User Guide. Obvious right?
 
-<https://community.cadence.com> is an open blog, with links to internal sources. Lol.
+### community.cadence.com
+
+<https://community.cadence.com> contains:
+
+- an open blog, with links to internal sources. Lol.
+- a forum, where all replies must be moderated before they appear. Lol. TODO: did my answer with actual command appear at: <https://community.cadence.com/cadence_technology_forums/f/31/t/22540>, or is that forbidden?
 
 ### GPDK
 
@@ -43,30 +48,6 @@ Dummy cell libraries by cadence to learn their tools.
 Does not represent any manufacturable silicon precisely, but the general concepts should be similar.
 
 <https://wiki.cse.buffalo.edu/services/content/cadence-gpdk>
-
-## Incisive
-
-## ncsim
-
-## ncverilog
-
-## irun
-
-`irun` is a more convenient front-end. `ncverilog` is deprecated for `irun`, which has basically the same options.
-
-Logic simulator.
-
-<https://en.wikipedia.org/wiki/NCSim>
-
-<http://hdvacademy.blogspot.co.uk/2014/07/simulation-using-cadence-ncsimncverilog.html> teaches the usage of `ncverilog`.
-
-<https://community.cadence.com/cadence_technology_forums/f/30/t/11942>
-
-    irun counter_tb.v +nctimescale+1ns/1ns
-
-where `counter_tb.v` includes `counter.v`.
-
-TODO compile to ELF executable.
 
 ## Innovus
 
