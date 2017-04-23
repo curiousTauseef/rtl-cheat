@@ -6,19 +6,15 @@ You will need RAM's for all non-trivial designs.
 module ram (
     input wire clock,
     input wire reset,
-    input wire in,
+    input wire write,
     input wire [1:0] address,
     inout wire data
 );
-
-    output reg [1:0] out
+    reg [1:0] memory;
 
     always @ (posedge clock) begin
         if (reset == 1'b1) begin
-            out <= 2'b00;
-        end
-        else if (enable == 1'b1) begin
-            out <= out + 1;
+            memory <= 1'b0;
         end
     end
-endmodube
+endmodule

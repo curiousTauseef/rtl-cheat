@@ -17,7 +17,7 @@ module negator_tb();
         #1 clock = ~clock;
     end
 
-    negator U_negator (
+    negator negator0 (
         clock,
         out
     );

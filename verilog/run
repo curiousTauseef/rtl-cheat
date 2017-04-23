@@ -17,8 +17,8 @@ iverilog -o counter_tb.vvp counter_tb.v
 vvp counter_tb.vvp
 
 printf '\n# ram\n'
-iverilog -o counter_tb.vvp counter_tb.v
-vvp counter_tb.vvp
+iverilog -g2005 -o ram_tb.vvp ram_tb.v
+vvp ram_tb.vvp
 
 # Verilator ---------------------------------------------
 

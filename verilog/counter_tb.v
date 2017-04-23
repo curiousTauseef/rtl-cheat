@@ -1,14 +1,13 @@
 `include "counter.v"
 module counter_tb();
-    // Declare inputs as regs and outputs as wires.
     reg clock, reset, enable;
     wire [1:0] out;
 
     initial begin
         $dumpfile("counter_tb.vcd");
-        $dumpvars(0, counter_tb);
-        $display ("time\t clk reset enable counter");
-        $monitor ("%g\t %b   %b     %b      %b",
+        $dumpvars;
+        $display ("time\tclk reset enable counter");
+        $monitor ("%g\t%b   %b     %b      %b",
             $time, clock, reset, enable, out);
         clock = 1;
         reset = 0;
@@ -24,8 +23,7 @@ module counter_tb();
         #5 clock = ~clock;
     end
 
-    // Connect DUT to test bench.
-    counter U_counter (
+    counter counter0 (
         clock,
         reset,
         enable,
