@@ -5,8 +5,8 @@ set -e
 # Icarus ------------------------------------------------
 
 printf '\n# hello\n'
-iverilog -o hello.vvp hello.v
-vvp hello.vvp
+iverilog -o hello_tb.vvp hello_tb.v
+vvp hello_tb.vvp
 
 printf '\n# negator\n'
 iverilog -o negator_tb.vvp negator_tb.v
@@ -21,11 +21,6 @@ iverilog -g2005 -o ram_tb.vvp ram_tb.v
 vvp ram_tb.vvp
 
 # Verilator ---------------------------------------------
-
-printf '\n# hello\n'
-verilator -Wall --cc hello.v --exe hello.cpp
-make -C obj_dir -f Vhello.mk Vhello
-./obj_dir/Vhello
 
 printf '\n# negator\n'
 verilator -Wall --cc negator.v --exe negator.cpp

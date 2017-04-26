@@ -5,7 +5,7 @@ module ram_tb();
     wire data;
 
     initial begin
-        $dumpfile("ram.vcd");
+        $dumpfile("ram_tb.vcd");
         $dumpvars;
         clock = 1;
         reset = 0;
@@ -20,7 +20,7 @@ module ram_tb();
         #5 clock = ~clock;
     end
 
-    ram ram0 (
+    ram top (
         clock,
         reset,
         write,

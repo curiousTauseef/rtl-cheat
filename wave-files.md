@@ -30,6 +30,31 @@ Use VCD as input for Verilog simulation:
 
 - <https://groups.google.com/forum/#!topic/comp.lang.verilog/LZOfMlAhr5U> says signal strength is missing. But this is notably possible in extended VCD. 
 
+#### VCD tooling
+
+Dominant open source GUI viewer: GTKWave: https://sourceforge.net/projects/gtkwave/
+
+Other viewers:
+
+-   browser
+    - <https://github.com/dosadih/weView>
+    - <https://github.com/rakeshkkrao/BAR-waveform-viewer>
+
+Parser libraries:
+
+- <https://github.com/GordonMcGregor/vcd_parser>
+- <https://pypi.python.org/pypi/Verilog_VCD> not version tracked? Already contacted author but no reply.
+
+#### Cross Module Reference
+
+#### XMR
+
+Unique path to a wire / module, e.g.:
+
+    top.submodule1.another_module.thewire
+
+Simple canonical way to refer to a given thing in the design.
+
 #### Extended VCD
 
 #### EVCD

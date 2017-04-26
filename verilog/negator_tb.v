@@ -6,7 +6,7 @@ module negator_tb();
 
     initial begin
         $dumpfile("negator_tb.vcd");
-        $dumpvars(0, negator_tb);
+        $dumpvars;
         $display ("time\t clk out");
         $monitor ("%g\t %b   %b", $time, clock, out);
         clock = 0;
@@ -17,7 +17,7 @@ module negator_tb();
         #1 clock = ~clock;
     end
 
-    negator negator0 (
+    negator top (
         clock,
         out
     );

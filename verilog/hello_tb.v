@@ -1,4 +1,4 @@
-module hello;
+module hello_tb;
     initial
     begin
         $display("hello world");

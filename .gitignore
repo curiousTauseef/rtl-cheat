@@ -1,8 +1,11 @@
 *.vcd
 *.vvp
 
+# Temporary files.
+*.bak
 tmp.*
 tmp_tb.*
+*.tmp
 
 # GHDL
 *.cf

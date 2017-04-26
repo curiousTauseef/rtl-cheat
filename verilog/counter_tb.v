@@ -23,7 +23,7 @@ module counter_tb();
         #5 clock = ~clock;
     end
 
-    counter counter0 (
+    counter top (
         clock,
         reset,
         enable,
