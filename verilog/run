@@ -12,6 +12,10 @@ printf '\n# negator\n'
 iverilog -o negator_tb.vvp negator_tb.v
 vvp negator_tb.vvp
 
+printf '\n# negator2\n'
+iverilog -o negator2_tb.vvp negator2_tb.v
+vvp negator2_tb.vvp
+
 printf '\n# counter\n'
 iverilog -o counter_tb.vvp counter_tb.v
 vvp counter_tb.vvp

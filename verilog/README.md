@@ -13,6 +13,9 @@
         1.  [src](negator.v)
         1.  [tb](negator_tb.v)
         1.  [tb verilator](negator.cpp)
+    1.  Negator2
+        1.  [src](negator2.v)
+        1.  [tb](negator2_tb.v)
     1.  Counter
         1.  [src](counter.v)
         1.  [tb](counter_tb.v)
