@@ -30,7 +30,40 @@ ucli.key
 # Incisive.
 .simvision/
 INCA_libs/
+irun.history
+irun.key
+irun.log
+ncsim.key
 ncsim.log
 ncverilog.history
 ncverilog.key
 ncverilog.log
+
+## Simvision
+
+.simvision/
+simvision*.diag
+
+# Mentor
+
+## Questa
+
+novas.conf
+novas.rc
+novas_dump.log
+qverilog.log
+
+# TODO forgot which tool.
+
+*.dsn
+*.trn
+*.vcd.shm
+inter.fsdb
+inter.fsdb.chain
+inter.fsdb.lock
+inter.fsdb.sinf
+inter.fsdb.slist
+inter.fsdb.str
+inter.fsdb.tlist
+inter.fsdb.xlist
+work/

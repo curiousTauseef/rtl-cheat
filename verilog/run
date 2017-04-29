@@ -80,3 +80,18 @@ make -C obj_dir -f Vcounter.mk Vcounter
 #cp ../counter_tb.v .
 #iverilog -o counter_tb.vvp counter_tb.v
 #vvp counter_tb.vvp
+
+# Cadence Incisive.
+
+#irun counter_tb.v +nctimescale+1ns/1ns -access +rwc
+#ncsim counter_tb
+
+# Synopsys VCS.
+
+#vcs -debug counter.v
+#vcs -debug counter_tb.v
+#./simv
+
+# Mentor Questa
+
+#qverilog counter_tb.v
