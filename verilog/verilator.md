@@ -10,6 +10,8 @@ Claims to be very fast, but hard to use at first.
 
 Exposes the Verilog simulation as a C++ API, which allows us to write test benches in C / C++, which is way easier than embedding it into HDL languages.
 
+Wiki mentions it was created by DEC for Alpha, then then open sourced.
+
 ## VERILATOR_ROOT
 
 Must point to where it was installed, the executable is at `VERLIATOR_ROOT/bin/verilator`.
