@@ -1,20 +1,33 @@
 /*
-Zero delay 1-bit bus, 2 bit capacity RAM model.
+Zero delay, dual channel RAM.
+
+Dual channel is simpler to design as it does not have to deal with Z.
 
 You will need RAM's for all non-trivial designs.
 */
-module ram (
+module ram #(
+    parameter ADDRESS_BITS = 1,
+    parameter DATA_BITS = 1
+) (
     input wire clock,
     input wire reset,
     input wire write,
-    input wire [1:0] address,
-    inout wire data
+    input wire [ADDRESS_BITS-1:0] address,
+    input wire [DATA_BITS-1:0] data_in,
+    output wire [DATA_BITS-1:0] data_out
 );
-    reg [1:0] memory;
+    localparam MEMORY_BITS = DATA_BITS * (1 << ADDRESS_BITS);
+
+    reg [MEMORY_BITS-1:0] memory;
+
+    assign data_out = memory[address];
 
     always @ (posedge clock) begin
-        if (reset == 1'b1) begin
-            memory <= {2{1'b1}};
+        if (reset == 1) begin
+            memory <= {MEMORY_BITS{1'b0}};
+        end
+        else if (write == 1) begin
+            memory[address] <= data_in;
         end
     end
 endmodule

@@ -2,7 +2,7 @@
 
 -include params.makefile
 
-CCC ?= iverilog
+CCC ?= iverilog -g2012
 IN_EXT ?= _tb.v
 OUT_EXT ?= .vvp
 RUN ?= vvp
@@ -17,7 +17,7 @@ all: $(OUTS)
 	$(CCC) -o '$@' '$<'
 
 clean:
-	rm -f *'$(OUT_EXT)'
+	git clean -Xdf
 
 run-%: %_tb$(OUT_EXT)
 	$(RUN) ./'$<'
