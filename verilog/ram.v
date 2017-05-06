@@ -1,9 +1,5 @@
 /*
-Zero delay, dual channel RAM.
-
-Dual channel is simpler to design as it does not have to deal with Z.
-
-You will need RAM's for all non-trivial designs.
+Zero delay, single channel RAM.
 */
 module ram #(
     parameter ADDRESS_BITS = 1,
@@ -13,21 +9,20 @@ module ram #(
     input wire reset,
     input wire write,
     input wire [ADDRESS_BITS-1:0] address,
-    input wire [DATA_BITS-1:0] data_in,
-    output wire [DATA_BITS-1:0] data_out
+    inout wire [DATA_BITS-1:0] data
 );
     localparam MEMORY_BITS = DATA_BITS * (1 << ADDRESS_BITS);
 
     reg [MEMORY_BITS-1:0] memory;
 
-    assign data_out = memory[address];
+    assign data = (write == 1) ? {DATA_BITS{1'bz}} : memory[address];
 
     always @ (posedge clock) begin
         if (reset == 1) begin
             memory <= {MEMORY_BITS{1'b0}};
         end
         else if (write == 1) begin
-            memory[address] <= data_in;
+            memory[address] <= data;
         end
     end
 endmodule

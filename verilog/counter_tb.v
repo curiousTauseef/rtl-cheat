@@ -1,5 +1,5 @@
 `include "counter.v"
-module counter_tb();
+module counter_tb;
     localparam BITS = 2;
 
     reg clock, reset, enable;

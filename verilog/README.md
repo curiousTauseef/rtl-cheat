@@ -21,10 +21,13 @@
         1.  [src](counter.v)
         1.  [tb](counter_tb.v)
         1.  [tb verilator](counter.cpp)
-    1.  Stdout
-        1.  [display](display_tb.v)
-        1.  [monitor](monitor_tb.v)
     1.  RAM
         1.  [src](ram.v)
         1.  [tb](ram_tb.v)
+    1.  RAM dual
+        1.  [src](ram_dual.v)
+        1.  [tb](ram_dual_tb.v)
+    1.  Stdout
+        1.  [display](display_tb.v)
+        1.  [monitor](monitor_tb.v)
 1.  [Bibliography](bibliography.md)
