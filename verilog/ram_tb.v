@@ -11,13 +11,13 @@ module ram_tb();
         reset = 0;
         write = 0;
         address = 2'b0;
-        #10 reset = 1;
-        #10 reset = 0;
+        #1 reset = 1;
+        #2 reset = 0;
         #10 $finish;
     end
 
     always begin
-        #5 clock = ~clock;
+        #1 clock = ~clock;
     end
 
     ram top (

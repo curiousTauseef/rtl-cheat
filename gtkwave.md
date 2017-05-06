@@ -1,6 +1,8 @@
-# gtkwave
+# GTKWave
 
-Major open source `.vcd` wave file viewer.
+Major open source wave file viewer. Supports several formats, notably `.vcd`.
+
+Besides the viewer, it also has several CLI tools to convert between formats.
 
 TODO:
 

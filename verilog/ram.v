@@ -14,7 +14,7 @@ module ram (
 
     always @ (posedge clock) begin
         if (reset == 1'b1) begin
-            memory <= 1'b0;
+            memory <= {2{1'b1}};
         end
     end
 endmodule

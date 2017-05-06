@@ -3,7 +3,7 @@ Example of how  to link two modules up.
 Links two negators in series.
 */
 `include "negator.v"
-module negator2(
+module two_modules(
     input wire in,
     output wire out
 );

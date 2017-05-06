@@ -1,11 +1,10 @@
-`include "negator.v"
-module negator_tb();
-    // Declare inputs as regs and outputs as wires.
+`include "two_modules.v"
+module two_modules_tb();
     reg clock;
     wire out;
 
     initial begin
-        $dumpfile("negator_tb.vcd");
+        $dumpfile("two_modules_tb.vcd");
         $dumpvars;
         clock = 0;
         #10 $finish;
@@ -15,7 +14,7 @@ module negator_tb();
         #1 clock = ~clock;
     end
 
-    negator top (
+    two_modules top (
         clock,
         out
     );

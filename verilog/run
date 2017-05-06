@@ -2,28 +2,6 @@
 
 set -e
 
-# Icarus ------------------------------------------------
-
-printf '\n# hello\n'
-iverilog -o hello_tb.vvp hello_tb.v
-vvp hello_tb.vvp
-
-printf '\n# negator\n'
-iverilog -o negator_tb.vvp negator_tb.v
-vvp negator_tb.vvp
-
-printf '\n# negator2\n'
-iverilog -o negator2_tb.vvp negator2_tb.v
-vvp negator2_tb.vvp
-
-printf '\n# counter\n'
-iverilog -o counter_tb.vvp counter_tb.v
-vvp counter_tb.vvp
-
-printf '\n# ram\n'
-iverilog -g2005 -o ram_tb.vvp ram_tb.v
-vvp ram_tb.vvp
-
 # Verilator ---------------------------------------------
 
 printf '\n# negator\n'

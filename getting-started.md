@@ -6,14 +6,11 @@ Tested on Ubuntu 16.04:
 
 Install GHDL: <http://askubuntu.com/questions/655961/use-14-04-application-in-15-04/786463#786463> Tested on GHDL `v0.33`.
 
-## VHDL and Verilog
+## VHDL
 
 Run all testbenches:
 
     cd vhdl
-    ./run
-
-    cd verilog
     ./run
 
 Run a single testbench: either of:
