@@ -2,10 +2,19 @@
 module ram_tb();
     localparam ADDRESS_BITS = 1;
     localparam DATA_BITS = 1;
+
     reg clock, reset, write;
     reg [ADDRESS_BITS-1:0] address;
     reg [DATA_BITS-1:0] data_in;
     wire [DATA_BITS-1:0] data_out;
+    ram top (
+        clock,
+        reset,
+        write,
+        address,
+        data_in,
+        data_out
+    );
 
     initial begin
         $dumpfile("ram_tb.vcd");
@@ -32,13 +41,4 @@ module ram_tb();
     always begin
         #1 clock = ~clock;
     end
-
-    ram top (
-        clock,
-        reset,
-        write,
-        address,
-        data_in,
-        data_out
-    );
 endmodule
