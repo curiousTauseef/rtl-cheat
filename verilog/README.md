@@ -30,4 +30,5 @@
     1.  Stdout
         1.  [display](display_tb.v)
         1.  [monitor](monitor_tb.v)
+        1.  [error](error_tb.v)
 1.  [Bibliography](bibliography.md)

@@ -33,9 +33,11 @@ TODO: above creating empty `.vcd`.
 
 ### Most important options
 
-- `+nctimescale+1ns/1ns` mandatory? Can be set on testbench?
+- `+nctimescale+1ns/1ns` mandatory? Can be set on testbench.
 - `-access +rwc`: allows interactive debug. Runs slower.
 - `-gui`: open interactive debugger (SimVision)
+- `-sv`: force SystemVerilog instead of verilog. Automatic for `.sv` files, required for `.v` files.
+- `-sysv2009`: use SystemVerilog 2009. TODO: no 2012? Seems to be default, but not forward compatible once they move the default to 200X...
 
 ### ncverilog
 
@@ -45,7 +47,7 @@ Replaced by `irun`, had basically the same options.
 
 Simulator.
 
-Requires that the verilog has already been compiled.
+Requires that the Verilog has already been compiled.
 
 Once it is: run non-interactive simulation:
 

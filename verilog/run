@@ -2,24 +2,6 @@
 
 set -e
 
-# Verilator ---------------------------------------------
-
-printf '\n# negator\n'
-verilator -Wall --cc negator.v --exe negator.cpp
-make -C obj_dir -f Vnegator.mk Vnegator
-./obj_dir/Vnegator
-
-printf '\n# counter\n'
-verilator -Wall --cc counter.v --exe counter.cpp
-make -C obj_dir -f Vcounter.mk Vcounter
-./obj_dir/Vcounter
-
-# Unsupported testbench features...
-# which are actually more elegantly done in C++.
-#verilator -Wall --cc negator_tb.v --exe negator_tb.cpp
-#make -C obj_dir -f Vnegator_tb.mk Vnegator_tb
-#./obj_dir/Vnegator_tb
-
 # Yosys ------------------------------------------------
 
 mkdir -p yosys_syn
@@ -58,11 +40,6 @@ make -C obj_dir -f Vcounter.mk Vcounter
 #cp ../counter_tb.v .
 #iverilog -o counter_tb.vvp counter_tb.v
 #vvp counter_tb.vvp
-
-# Cadence Incisive.
-
-#irun counter_tb.v +nctimescale+1ns/1ns -access +rwc
-#ncsim counter_tb
 
 # Synopsys VCS.
 

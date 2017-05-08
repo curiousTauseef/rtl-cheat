@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+vvp "$1"

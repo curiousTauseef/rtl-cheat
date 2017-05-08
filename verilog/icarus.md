@@ -9,4 +9,4 @@ Generate VCD: <http://iverilog.wikia.com/wiki/GTKWAVE>:
 
 Ugly, embedded into simulation.
 
-Supports up to Verilog 2005.
+Supports up to Verilog 2005 well, with flags for experimental 2009 / 2012.
