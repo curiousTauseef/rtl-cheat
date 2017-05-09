@@ -3,42 +3,43 @@
 
 #include "Vnegator.h"
 #include "verilated.h"
-#include "verilated_vcd_c.h"
+
+#include "common.hpp"
+
+class NegatorTestCase : public TestCase<Vnegator> {
+    public:
+        NegatorTestCase() : TestCase("negator.cpp.vcd") {}
+        virtual void init() {
+        }
+        virtual void step(bool& finish, bool& fail) {
+            this->dut->in = this->clock;
+            finish = (time == 7);
+        }
+};
 
 int main(int argc, char **argv) {
     Verilated::commandArgs(argc, argv);
-    Vnegator *top = new Vnegator;
 
     /*
+    Sample fully explicit test case.
+
     Since this is a sequential circuit, we only need to test
     each input once, history does not matter.
     */
     {
-        top->in = 0;
-        top->eval();
-        assert(top->out == 1);
+        Vnegator *dut = new Vnegator;
 
-        top->in = 1;
-        top->eval();
-        assert(top->out == 0);
+        dut->in = 0;
+        dut->eval();
+        assert(dut->out == 1);
+
+        dut->in = 1;
+        dut->eval();
+        assert(dut->out == 0);
+
+        delete dut;
     }
 
-    /* VCD. */
-    Verilated::traceEverOn(true);
-    VerilatedVcdC* tfp = new VerilatedVcdC;
-    top->trace(tfp, 99);
-    tfp->open("negator.cpp.vcd");
-
-    vluint64_t main_time = 0;
-    top->in = 0;
-    while (main_time < 10 && !Verilated::gotFinish()) {
-        top->eval();
-        tfp->dump(main_time);
-        top->in = !top->in;
-        main_time++;
-    }
-    tfp->close();
-    delete tfp;
-    top->final();
-    delete top;
+    /* Factored out test case using our little library. */
+    assert(NegatorTestCase().run());
 }

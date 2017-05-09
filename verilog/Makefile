@@ -27,7 +27,7 @@ all-verilator: $(VERILATOR_OUTS)
 # -f is mainly for -G parameters, which must be known at compile time and cannot be set from C:
 # https://www.veripool.org/boards/2/topics/276-Verilator-Efficient-Usage-of-Verilog-Parameters
 $(VERILATOR_OUT_DIR)V%: %$(VERILATOR_IN_EXT)
-	verilator -Wall --cc '$(basename $<)'.v --exe -f $(basename $<).params --trace '$<'
+	verilator -CFLAGS "-ggdb3 --std=c++11" -Wall --cc '$(basename $<)'.v --exe -f $(basename $<).params --trace '$<'
 	make -C '$(VERILATOR_OUT_DIR)' -f V$(basename $<).mk V$(basename $<)
 
 clean:
