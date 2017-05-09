@@ -9,15 +9,21 @@
 class CounterTestCase : public TestCase<Vcounter> {
     public:
         CounterTestCase() : TestCase("counter.cpp.vcd") {}
-        virtual void init() {
-            this->dut->reset = 1;
-            this->dut->enable = 1;
+        virtual bool check() {
+            if (this->time < 2) {
+                return true;
+            } else {
+                return (this->dut->out == (((this->time - 1) / 2)) % 4);
+            }
         }
-        virtual void step(bool& finish, bool& fail) {
-            this->dut->reset = 0;
+        virtual void step(bool& finish) {
+            if (this->time == 0) {
+                this->dut->enable = 1;
+                this->dut->reset = 1;
+            } else if (this->time == 2) {
+                this->dut->reset = 0;
+            }
             this->dut->clock = this->clock;
-            if (this->dut->out == this->time % 4)
-                fail = true;
             finish = (time == 10);
         }
 };

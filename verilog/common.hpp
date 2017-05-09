@@ -25,32 +25,30 @@ class TestCase {
             this->dut->final();
             delete this->dut;
         }
-        virtual void init() = 0;
-        virtual void step(bool& finish, bool& fail) = 0;
+        virtual bool check() { return true; }
+        virtual void step(bool& finish) = 0;
         bool run() {
-            bool finish, fail, ret;
+            bool finish, pass;
             Verilated::traceEverOn(true);
             VerilatedVcdC *vcd = new VerilatedVcdC;
             this->dut->trace(vcd, 99);
             vcd->open(vcdPath.c_str());
-            ret = true;
-            this->init();
+            pass = true;
             do {
-                fail = false;
-                this->step(finish, fail);
+                this->step(finish);
                 this->dut->eval();
                 vcd->dump(this->time);
+                pass = this->check();
                 this->time++;
                 this->clock = !this->clock;
-                if (fail) {
-                    ret = false;
+                if (!pass) {
                     finish = true;
                 }
             } while(!finish && !Verilated::gotFinish());
             vcd->dump(this->time);
             vcd->close();
             delete vcd;
-            return ret;
+            return pass;
         }
 };
 

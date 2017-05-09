@@ -9,8 +9,6 @@
 class NegatorTestCase : public TestCase<Vnegator> {
     public:
         NegatorTestCase() : TestCase("negator.cpp.vcd") {}
-        virtual void init() {
-        }
         virtual void step(bool& finish, bool& fail) {
             this->dut->in = this->clock;
             finish = (time == 7);
