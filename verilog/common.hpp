@@ -41,7 +41,7 @@ class TestCase {
                 pass = this->check();
                 this->time++;
                 this->clock = !this->clock;
-                if (!pass || !Verilated::gotFinish()) {
+                if (!pass || Verilated::gotFinish()) {
                     finish = true;
                 }
             } while(!finish);
