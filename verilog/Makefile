@@ -28,7 +28,7 @@ all-verilator: $(VERILATOR_OUTS)
 # https://www.veripool.org/boards/2/topics/276-Verilator-Efficient-Usage-of-Verilog-Parameters
 $(VERILATOR_OUT_DIR)V%: %$(VERILATOR_IN_EXT)
 	verilator -CFLAGS "-ggdb3 --std=c++11" -Wall --cc '$(basename $<)'.v --exe -f $(basename $<).params --trace '$<'
-	make -C '$(VERILATOR_OUT_DIR)' -f V$(basename $<).mk V$(basename $<)
+	make -C '$(VERILATOR_OUT_DIR)' -f V$(basename $<).mk -j"$$(($$(nproc) - 2))" V$(basename $<)
 
 clean:
 	git clean -Xdf
