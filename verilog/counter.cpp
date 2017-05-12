@@ -6,6 +6,9 @@
 
 #include "common.hpp"
 
+#define BITS 2
+#define NVALS (1 << BITS)
+
 class CounterTestCase : public TestCase<Vcounter> {
     public:
         CounterTestCase() : TestCase("counter.cpp.vcd") {}
@@ -13,7 +16,7 @@ class CounterTestCase : public TestCase<Vcounter> {
             if (this->time < 2) {
                 return true;
             } else {
-                return (this->dut->out == (((this->time - 1) / 2)) % 4);
+                return (this->dut->out == (((this->time - 1) / 2)) % NVALS);
             }
         }
         virtual void step(bool& finish) {

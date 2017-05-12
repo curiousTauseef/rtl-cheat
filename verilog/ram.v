@@ -1,5 +1,10 @@
 /*
 Zero delay, single channel RAM.
+
+Modelling RAM in verilog is basically useless, as real RAM has
+delays and we would have to create a ugly state machine to model that.
+
+A Verilator C++ behavioural model is much better.
 */
 module ram #(
     parameter ADDRESS_BITS = 1,
