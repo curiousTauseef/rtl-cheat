@@ -21,13 +21,17 @@ all-icarus: $(ICARUS_OUTS)
 
 all-verilator: $(VERILATOR_OUTS)
 
-%_tb$(ICARUS_OUT_EXT): %$(ICARUS_IN_EXT)
+# Some _tb.v only test behavioral concepts, and don't have corresponding .v
+# However, we sill want those that do have .v to recompile if the .v changes.
+# http://stackoverflow.com/questions/8175653/marking-a-makefile-dependency-as-optional-or-otherwise-unimportant/43956926#43956926
+.SECONDEXPANSION:
+%_tb$(ICARUS_OUT_EXT): %$(ICARUS_IN_EXT) $$(wildcard $$*.v)
 	$(ICARUS_CC) -o '$@' '$<'
 
 # -f is mainly for -G parameters, which must be known at compile time and cannot be set from C:
 # https://www.veripool.org/boards/2/topics/276-Verilator-Efficient-Usage-of-Verilog-Parameters
-$(VERILATOR_OUT_DIR)V%: %$(VERILATOR_IN_EXT)
-	verilator -CFLAGS "-ggdb3 --std=c++11" -Wall --cc '$(basename $<)'.v --exe -f $(basename $<).params --trace '$<'
+$(VERILATOR_OUT_DIR)V%: %$(VERILATOR_IN_EXT) %.v
+	verilator -CFLAGS "-ggdb3 --std=c++11" --cc '$(basename $<)'.v --exe -f $(basename $<).params --trace '$<'
 	make -C '$(VERILATOR_OUT_DIR)' -f V$(basename $<).mk -j"$$(($$(nproc) - 2))" V$(basename $<)
 
 clean:

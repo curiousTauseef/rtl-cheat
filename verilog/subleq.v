@@ -15,12 +15,12 @@ module subleq #(
     reg [1:0] stage;
     reg [BITS-1:0] pc, a, b, c;
 
-    wire b_next;
+    wire signed [BITS-1:0] b_next;
 
     assign address =
-        (stage == 0) ? pc + 0 * BITS :
-        (stage == 1) ? pc + 1 * BITS :
-        (stage == 2) ? pc + 2 * BITS :
+        (stage == 0) ? pc + BITS'(0 * BITS) :
+        (stage == 1) ? pc + BITS'(1 * BITS) :
+        (stage == 2) ? pc + BITS'(2 * BITS) :
         (stage == 3) ? c :
         {BITS{1'b0}}
     ;
@@ -37,7 +37,7 @@ module subleq #(
                 0: a <= data;
                 1: b <= data;
                 2: c <= data;
-                3: pc <= (b_next < 0) ? c : (pc + 1 * BITS);
+                3: pc <= (b_next < 0) ? c : pc + BITS'(BITS);
             endcase
             stage <= stage + 1;
         end

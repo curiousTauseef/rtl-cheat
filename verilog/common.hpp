@@ -4,7 +4,6 @@
 #include <cstdint>
 #include <string>
 
-#include "Vnegator.h"
 #include "verilated_vcd_c.h"
 
 template<class Vdut>
