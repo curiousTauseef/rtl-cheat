@@ -37,7 +37,7 @@ module subleq #(
                 0: a <= data;
                 1: b <= data;
                 2: c <= data;
-                3: pc <= (b_next < 0) ? c : pc + BITS'(BITS);
+                3: pc <= (b_next < 0) ? c : pc + BITS'(3);
             endcase
             stage <= stage + 1;
         end
