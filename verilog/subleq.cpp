@@ -1,6 +1,7 @@
 #include <bitset>
 #include <cassert>
 #include <cstdint>
+#include <fstream>
 #include <iostream>
 
 #include "Vsubleq.h"
@@ -8,33 +9,44 @@
 
 #include "common.hpp"
 
-#define BITS 4
-
-template<typename ADDRESS_TYPE, int ADDRESS_BITS, typename DATA_TYPE, int DATA_BITS>
-class Ram {
+template<
+    typename ADDRESS_TYPE,
+    unsigned int ADDRESS_BITS,
+    typename DATA_TYPE,
+    unsigned int DATA_BITS,
+    unsigned int NWORDS = (1 << ADDRESS_BITS),
+    unsigned int NBITS = (NWORDS * DATA_BITS)
+>
+class Ram : public std::bitset<NBITS> {
     private:
-        std::bitset<(1 << ADDRESS_BITS) * DATA_BITS> bits;
 
         /* http://stackoverflow.com/questions/17857596/how-to-convert-a-range-subset-of-bits-in-a-c-bitset-to-a-number?noredirect=1&lq=1
          * http://stackoverflow.com/questions/2177186/in-bitset-can-i-use-to-ulong-for-a-specific-range-of-bits */
-        DATA_TYPE get(ADDRESS_TYPE address) {
+        DATA_TYPE get_word(ADDRESS_TYPE address) {
             DATA_TYPE ret = 0;
             DATA_TYPE mask = 1;
-            for (std::size_t i = 0; i < BITS; ++i) {
-                if (this->bits[address + i])
+            for (std::size_t i = 0; i < NBITS; ++i) {
+                if (this->operator[](address + i))
                     ret |= mask;
                 mask <<= 1;
             }
             return ret;
         }
 
-        void set(ADDRESS_TYPE address, DATA_TYPE data) {
+        void set_word(ADDRESS_TYPE address, DATA_TYPE data) {
             DATA_TYPE ret = 0;
             DATA_TYPE mask = 1;
-            for (std::size_t i = 0; i < BITS; ++i) {
+            for (std::size_t i = 0; i < NBITS; ++i) {
                 if (mask & data)
-                    this->bits.set(address + i);
+                    this->set(address + i);
                 mask <<= 1;
+            }
+        }
+
+        void load(const char *buffer) {
+            DATA_TYPE mask = 1;
+            for (size_t bit = 0; bit < NBITS; ++bit) {
+                this->set(bit, buffer[bit >> 3] & (1 << (bit % 8)));
             }
         }
 
@@ -46,18 +58,26 @@ class Ram {
             bool write
         ) {
             if (write) {
-                this->set(address, data);
+                this->set_word(address, data);
             } else {
-                data = this->get(address);
+                data = this->get_word(address);
             }
         }
+
+        static constexpr decltype(ADDRESS_BITS) get_nbits() { return NBITS; }
 };
 
+template<unsigned int BITS>
 class SubleqTestCase : public TestCase<Vsubleq> {
-    private:
-        Ram<decltype(Vsubleq::address), BITS, decltype(Vsubleq::data), BITS> ram;
     public:
-        SubleqTestCase() : TestCase("subleq.cpp.vcd") {}
+        typedef Ram<decltype(Vsubleq::address), BITS, decltype(Vsubleq::data), BITS> ram_t;
+        SubleqTestCase(
+            ram_t &ram,
+            std::string vcd_file_path
+        ) :
+            TestCase(vcd_file_path),
+            ram(ram)
+        {}
         virtual bool check() {
             return true;
         }
@@ -73,11 +93,28 @@ class SubleqTestCase : public TestCase<Vsubleq> {
                 write
             );
             this->dut->clock = this->clock;
-            finish = (time == 60);
+            if (time == 60) {
+                finish = true;
+            }
         }
+        static constexpr decltype(ram_t::get_nbits()) get_nbits() {
+            return ram_t::get_nbits();
+        }
+    private:
+        ram_t &ram;
 };
 
 int main(int argc, char **argv) {
     Verilated::commandArgs(argc, argv);
-    assert(SubleqTestCase().run());
+    constexpr unsigned int BITS = 4;
+
+    // zero input. Infinite loop.
+    SubleqTestCase<BITS>::ram_t ram0, ram;
+    assert(SubleqTestCase<BITS>(ram, "subleq_zero.cpp.vcd").run());
+    assert(ram == ram0);
+
+    //for (size_t bit = 0; bit < decltype(ram)::get_nbits(); ++bit) {
+        //ram0.set_bit(bit, false);
+    //}
+    //assert(SubleqTestCase<BITS>(buffer, "subleq_inc.cpp.vcd").run());
 }
