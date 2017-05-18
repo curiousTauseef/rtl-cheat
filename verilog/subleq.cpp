@@ -93,7 +93,7 @@ class SubleqTestCase : public TestCase<Vsubleq> {
                 write
             );
             this->dut->clock = this->clock;
-            if (time == 60) {
+            if (this->dut->halt || time == 64) {
                 finish = true;
             }
         }
@@ -108,7 +108,7 @@ int main(int argc, char **argv) {
     Verilated::commandArgs(argc, argv);
     constexpr unsigned int BITS = 4;
 
-    // zero input. Infinite loop.
+    // zero input. Immediate infinite loop.
     SubleqTestCase<BITS>::ram_t ram0, ram;
     assert(SubleqTestCase<BITS>(ram, "subleq_zero.cpp.vcd").run());
     assert(ram == ram0);
