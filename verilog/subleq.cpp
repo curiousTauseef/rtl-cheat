@@ -25,8 +25,9 @@ class Ram : public std::bitset<NBITS> {
         DATA_TYPE get_word(ADDRESS_TYPE address) {
             DATA_TYPE ret = 0;
             DATA_TYPE mask = 1;
-            for (std::size_t i = 0; i < NBITS; ++i) {
-                if (this->operator[](address + i))
+            auto base = address * DATA_BITS;
+            for (std::size_t i = 0; i < DATA_BITS; ++i) {
+                if (this->operator[](base + i))
                     ret |= mask;
                 mask <<= 1;
             }
@@ -36,9 +37,9 @@ class Ram : public std::bitset<NBITS> {
         void set_word(ADDRESS_TYPE address, DATA_TYPE data) {
             DATA_TYPE ret = 0;
             DATA_TYPE mask = 1;
-            for (std::size_t i = 0; i < NBITS; ++i) {
-                if (mask & data)
-                    this->set(address + i);
+            auto base = address * DATA_BITS;
+            for (std::size_t i = 0; i < DATA_BITS; ++i) {
+                this->set(address + i, mask & data);
                 mask <<= 1;
             }
         }
@@ -52,6 +53,8 @@ class Ram : public std::bitset<NBITS> {
 
     public:
 
+        using std::bitset<NBITS>::bitset;
+
         void update(
             ADDRESS_TYPE &address,
             DATA_TYPE &data,
@@ -62,6 +65,12 @@ class Ram : public std::bitset<NBITS> {
             } else {
                 data = this->get_word(address);
             }
+            //std::cout
+                //<< " " << unsigned(address)
+                //<< " " << unsigned(data)
+                //<< " " << unsigned(write)
+                //<< std::endl
+            //;
         }
 
         static constexpr decltype(ADDRESS_BITS) get_nbits() { return NBITS; }
@@ -90,10 +99,10 @@ class SubleqTestCase : public TestCase<Vsubleq> {
             ram.update(
                 this->dut->address,
                 this->dut->data,
-                write
+                this->dut->write
             );
             this->dut->clock = this->clock;
-            if (this->dut->halt || time == 64) {
+            if (this->dut->halt || this->time == 64) {
                 finish = true;
             }
         }
@@ -108,13 +117,27 @@ int main(int argc, char **argv) {
     Verilated::commandArgs(argc, argv);
     constexpr unsigned int BITS = 4;
 
-    // zero input. Immediate infinite loop.
-    SubleqTestCase<BITS>::ram_t ram0, ram;
-    assert(SubleqTestCase<BITS>(ram, "subleq_zero.cpp.vcd").run());
-    assert(ram == ram0);
+    // Zero input. Immediate infinite loop.
+    {
+        SubleqTestCase<BITS>::ram_t ram0, ram;
+        assert(SubleqTestCase<BITS>(ram, "subleq_zero.cpp.vcd").run());
+        assert(ram == ram0);
+    }
 
-    //for (size_t bit = 0; bit < decltype(ram)::get_nbits(); ++bit) {
-        //ram0.set_bit(bit, false);
-    //}
+    // 2 state oscillator. Never halts, but never does anything either.
+    {
+        SubleqTestCase<BITS>::ram_t ram0(
+            "0000" "0000" "0000"
+            "0011" "0000" "0000"
+            //"0101" "0100" "0011"
+            //"0010" "0001" "0000"
+            //"1111" "1111" "1111"
+            //"1111" "1111" "1111"
+        );
+        auto ram = ram0;
+        assert(SubleqTestCase<BITS>(ram, "subleq_oscillator.cpp.vcd").run());
+        assert(ram == ram0);
+    }
+
     //assert(SubleqTestCase<BITS>(buffer, "subleq_inc.cpp.vcd").run());
 }

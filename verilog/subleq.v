@@ -35,7 +35,7 @@ module subleq #(
         (stage == STAGE_READ_A) ? pc + BITS'(0) :
         (stage == STAGE_READ_B) ? pc + BITS'(1) :
         (stage == STAGE_READ_C) ? pc + BITS'(2) :
-        c
+        b
     ;
     assign b_next = b - a;
     assign data = write ? b_next : {BITS{1'bz}};
