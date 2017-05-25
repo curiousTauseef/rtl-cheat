@@ -1,0 +1,46 @@
+# Sum all values in an array.
+# Input is of form:
+# ninputs inputs[0] inputs[1] ... inputs[ninputs - 1]
+
+# int *out = inputs + ninputs;
+# out += inputs
+cur Z
+Z out
+Z
+# out += ninputs
+ninputs Z
+Z out
+Z
+
+# *out = 0
+out out
+
+main_loop:
+
+# *out += *cur
+cur Z
+Z out: 0
+Z
+
+# cur++;
+cm1 cur
+
+# if (out <= cur) goto halt
+out Z
+cur Z2
+Z Z2 halt
+Z
+Z2
+
+# goto main_loop
+Z Z main_loop
+
+# halt
+halt: Z Z ?-3
+
+. Z: 0
+. Z2: 0
+. cm1: -1
+. cur: inputs
+. ninputs: 4
+. inputs: 1 2 3 4
