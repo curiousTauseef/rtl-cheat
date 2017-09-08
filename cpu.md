@@ -4,10 +4,7 @@
 
 ## Educational
 
--   <https://github.com/zhemao/ez8>
--   <https://www.cs.utexas.edu/~byoung/cs429/slides6-isa1.pdf>
-    - <https://xsznix.github.io/js-y86/> js assembler and simulator
-    - <https://github.com/linusyang/python-y86>
+-   <https://github.com/zhemao/ez8> custom simple 8-bit architecture with Verilog implementation
 -   <https://github.com/ZipCPU>
 
 ## Benchmarks
