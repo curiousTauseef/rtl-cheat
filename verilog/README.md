@@ -1,9 +1,9 @@
 # Verilog
 
-1.  [Getting started](getting-started.md)
+1.  [**Getting started**](getting-started.md)
 1.  Theory
-    1. [Standards](standards.md)
-    1. [Vs VHDL](vs-vhdl.md)
+    1.  [Standards](standards.md)
+    1.  [Vs VHDL](vs-vhdl.md)
     1.  Simulators
         1. [Verilator](verilator.md)
         1. [Icarus](icarus.md)
