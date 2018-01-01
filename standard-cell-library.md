@@ -20,13 +20,13 @@ Plain text!
 
 Yosys can take a standard cell library file in `.lib` Liberty file format.
 
-TODO find spec. Mentioned at: http://www.csee.umbc.edu/~cpatel2/links/641/slides/lect05_LIB.pdf
+TODO find spec. Mentioned at: <http://www.csee.umbc.edu/~cpatel2/links/641/slides/lect05_LIB.pdf>
 
 Contains the following information for each cell:
 
-- delays. TODO: isn't that also contained in the `specify` directive: <http://verilog.renerta.com/source/vrg00044.htm>
-- leakage
 - cell area. TODO: 0.0 indicates unspecified?
+- delays. TODO: isn't that also contained in the `specify` directive: <http://verilog.renerta.com/source/vrg00044.htm>
+- leakage, for power
 - cell function: logical function they implement, in a one liner boolean expression
 
 ### Delay model
@@ -50,7 +50,8 @@ Sources:
 ## Open source standard cell libraries
 
 - <https://www.quora.com/Are-there-good-open-source-standard-cell-libraries-to-learn-IC-synthesis-with-EDA-tools>
-- <http://www.vlsitechnology.org/html/libraries.html>
+- <http://www.vlsitechnology.org/html/libraries.html> links to a bunch of examples, e.g. vsclib
+- <http://www-soc.lip6.fr/>, <https://www-soc.lip6.fr/git/alliance.git>
 
 ### Leaked libraries
 
