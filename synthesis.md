@@ -37,6 +37,7 @@ There is an official synthesizable subset of VHDL.
 
 Open source lists:
 
+- <https://www.youtube.com/watch?v=EsEcLZc0RO8> efabless demo, qflow for PnR
 - <http://electronics.stackexchange.com/questions/60571/open-source-verilog-synthesizer?rq=1>
 - <https://githubbcom/cjdrake/pyeda>
 

@@ -2,7 +2,7 @@
 
 <https://github.com/cliffordwolf/yosys>
 
-At toplevel at 9804ebedbfd7db66849874bd11b167deb1bfed18:
+At toplevel at 9804ebedbfd7db66849874bd11b167deb1bfed18 `synth.ys`:
 
     read_verilog tests/simple/fiedler-cooley.v
     hierarchy
@@ -17,13 +17,18 @@ At toplevel at 9804ebedbfd7db66849874bd11b167deb1bfed18:
     opt
     write_verilog synth.v
 
-Most of Verilog 2005.
+Then:
 
-Output: TODO check: Verilog 2005 containing only gate level primitives or cell library components.
+    cat synth.v
 
-TODO no GDSII output?
+and we see that there are only cells from the library!
 
-TODO: what do the following do:
+Also worked with:
 
-    fsm
-	memory
+- <http://www.vlsitechnology.org/html/libraries.html>
+- <http://www.vlsitechnology.org/synopsys/vsclib013.lib>
+
+Timing:
+
+- <https://www.reddit.com/r/yosys/comments/3djedt/timing_constraints_in_yosys_abc/>
+- <http://www.clifford.at/yosys/faq.html> 3. Does Yosys support timing driven synthesis?

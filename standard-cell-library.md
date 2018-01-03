@@ -51,7 +51,8 @@ Sources:
 
 - <https://www.quora.com/Are-there-good-open-source-standard-cell-libraries-to-learn-IC-synthesis-with-EDA-tools>
 - <http://www.vlsitechnology.org/html/libraries.html> links to a bunch of examples, e.g. vsclib
-- <http://www-soc.lip6.fr/>, <https://www-soc.lip6.fr/git/alliance.git>
+- <http://www-soc.lip6.fr/>, <https://www-soc.lip6.fr/git/alliance.git> contains libs inside
+- FreePDK45
 
 ### Leaked libraries
 
