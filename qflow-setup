@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# http://opencircuitdesign.com/qflow/
+
+set -eu
+
+mkdir -p qflow
+cd qflow
+
+sudo apt-get install libffi-dev libgsl-dev
+git clone https://github.com/cliffordwolf/yosys
+cd yosys
+make -j"$(nproc)"
+sudo make install
+cd ..
+
+git clone https://github.com/rubund/graywolf
+cd graywolf
+cmake .
+make -j"$(nproc)"
+sudo make install
+cd ..
+
+git clone git://opencircuitdesign.com/qrouter-1.4
+cd qrouter-1.4
+./configure
+make -j"$(nproc)"
+sudo make install
+cd ..
+
+git clone git://opencircuitdesign.com/magic-8.2
+cd magic-8.2
+./configure
+make -j"$(nproc)"
+sudo make install
+cd ..
+
+git clone git://opencircuitdesign.com/qflow-1.2
+cd qflow-1.2
+./configure \
+  --with-graywolf="$(which graywolf)" \
+  --with-magic="$(which magic)" \
+  --with-qrouter="$(which qrouter)" \
+  --with-yosys="$(which yosys)" \
+;
+make -j"$(nproc)"
+sudo make install
+cd ..
+
+mkdir qflow-demo
+cd qflow-demo
+wget \
+  http://opencircuitdesign.com/qflow/example/load.tcl \
+  http://opencircuitdesign.com/qflow/example/map9v3.cel2 \
+  http://opencircuitdesign.com/qflow/example/map9v3.tcl \
+  http://opencircuitdesign.com/qflow/example/map9v3.v \
+  http://opencircuitdesign.com/qflow/example/map9v3_cosim_tb.spi \
+  http://opencircuitdesign.com/qflow/example/map9v3_gates_tb.v \
+  http://opencircuitdesign.com/qflow/example/osu035_stdcells.gds2 \
+  http://opencircuitdesign.com/qflow/example/osu035_stdcells.v \
+  http://opencircuitdesign.com/qflow/example/setup.tcl \
+  http://opencircuitdesign.com/qflow/example/setup.tcl \
+;
+mkdir -p layout source synthesis
+cp map9v3.v source
+qflow synthesize place route map9v3
