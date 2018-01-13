@@ -28,7 +28,7 @@ Also worked with:
 - <http://www.vlsitechnology.org/html/libraries.html>
 - <http://www.vlsitechnology.org/synopsys/vsclib013.lib>
 
-Timing:
+Static timing analysis, timing driven synthesis:
 
 - <https://www.reddit.com/r/yosys/comments/3djedt/timing_constraints_in_yosys_abc/>
 - <http://www.clifford.at/yosys/faq.html> 3. Does Yosys support timing driven synthesis?

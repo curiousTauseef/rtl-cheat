@@ -1,0 +1,13 @@
+diff --git a/src/Ylib/okmalloc.c b/src/Ylib/okmalloc.c
+index 10f7a33..8a5ef68 100644
+--- a/src/Ylib/okmalloc.c
++++ b/src/Ylib/okmalloc.c
+@@ -901,7 +901,7 @@ VOIDPTR ptr;
+ VOID Ysafe_cfree(ptr)
+ VOIDPTR ptr;
+ {
+-    cfree(ptr);
++    free(ptr);
+     return;
+ }
+ 
